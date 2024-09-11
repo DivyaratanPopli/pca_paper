@@ -1,0 +1,181 @@
+\documentclass[12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage[super]{nth}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{lineno}
+\usepackage[
+singlelinecheck=false
+]{caption}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+%\usepackage{bm}
+%\usepackage{bbm}
+\usepackage{graphicx}
+\usepackage{csvsimple}
+%\usepackage[section]{placeins}
+\usepackage{lineno}
+\usepackage{natbib}
+\usepackage[T1]{fontenc}
+\usepackage[breaklinks]{hyperref}
+%\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{array}
+
+\usepackage{acronym}
+%\usepackage{hyphenat}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+
+\setmainlanguage{english}
+\setmainfont{Arial}
+\setotherlanguages{sanskrit} %% or other languages
+
+\newfontfamily\devanagarifont[Script=Devanagari]{Lohit Devanagari}
+
+
+\newcolumntype{F}[1]{%
+    >{\raggedright\arraybackslash\hspace{0pt}}p{#1}}%
+\newcolumntype{T}[1]{%
+    >{\centering\arraybackslash\hspace{0pt}}p{#1}}%
+
+
+\title{Estimating relatedness with ancient DNA}
+\author{Divyaratan Popli}
+%\date{5 August 2021}
+%\linenumbers
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+\usepackage{bm}
+
+
+\newcommand{\BY}{\mathbf{Y}}
+\newcommand{\BW}{\mathbf{W}}
+\newcommand{\BU}{\mathbf{U}}
+\newcommand{\BI}{\mathbf{I}}
+\newcommand{\BZ}{\mathbf{Z}}
+\newcommand{\BD}{\mathbf{D}}
+\newcommand{\BN}{\mathbf{N}}
+\newcommand{\BH}{\mathbf{H}}
+\newcommand{\BP}{\mathbb{P}}
+\newcommand{\Btheta}{\pmb{\theta}}
+
+
+\newcommand{\MX}{\mathbf{X}}
+\newcommand{\MS}{\mathbf{S}}
+\newcommand{\MP}{\mathbf{P}}
+\newcommand{\MG}{\mathbf{G}}
+\newcommand{\MZ}{\mathbf{Z}}
+\newcommand{\ML}{\mathbf{L}}
+\newcommand{\MA}{\mathbf{A}}
+\newcommand{\MB}{\mathbf{B}}
+\newcommand{\Mpi}{\bm{\pi}}
+\newcommand{\MD}{\mathbf{D}}
+\newcommand{\Mal}{\bm{\alpha}}
+\newcommand{\Mbe}{\bm{\beta}}
+\newcommand{\Mga}{\bm{\gamma}}
+
+
+
+\newcommand{\COV}[2]{\text{Cov}(#1,#2)}
+
+\newcommand{\CX}{\mathcal{X}}
+
+
+\hbadness=99999
+
+\usepackage{breqn}
+
+\begin{document}
+\pagenumbering{gobble}
+
+\input{titlepage}
+
+\chapter*{}
+\input{Dedication}
+
+\chapter*{}
+\input{Information}
+
+\chapter*{Acknowledgements}
+\input{Acknowledgements}
+
+\chapter*{Summary}
+\input{Summary}
+
+\chapter*{Preface}
+\input{Preface}
+
+\tableofcontents
+
+\listoffigures
+\listoftables
+
+
+\clearpage % Start the list of abbreviations on a new page
+
+\chapter*{List of Abbreviations} % Use \section* to prevent numbering
+
+%\addcontentsline{toc}{section}{List of Abbreviations} % Add to table of contents without numbering
+
+\begin{acronym}[ABCDEFABCDEF]
+  \acro{DNA}{Deoxyribonucleic acid}
+  \acro{aDNA}{ancient Deoxyribonucleic acid}
+  \acro{PCA}{Principal Component Analysis}
+  \acro{PPCA}{Probabilistic Principal Component Analysis}
+  \acro{LSE}{Latent Subspace Estimation}
+  \acro{ya}{years ago}
+  \acro{AMH}{Anatomically modern humans}
+  \acro{EDTA}{Ethylenediaminetetraacetic acid}
+  \acro{UDG}{Uracil-DNA glycosylase}
+  \acro{PCR}{Polymerase chain reaction}
+  \acro{GWAS}{Genome-wide association studies}
+  \acro{IBD}{Identity by descent}
+  \acro{HMM}{Hidden Markov model}
+  \acro{ROH}{Runs of homozygosity}
+  \acro{SNP}{Single nucleotide polymorphism}
+  \acro{SVD}{Singular value decomposition}
+  
+  
+\end{acronym}
+
+
+\chapter{Background}
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+\input{Chapters/Background}
+
+\chapter{Estimating genetic relatedness from ancient DNA: on the scale of families}\label{chapter_kin}
+\input{Chapters/Chapter1}
+
+\chapter{Estimating genetic relatedness from ancient DNA: on the scale of populations}\label{chapter_ppca}
+\input{Chapters/Chapter2}
+
+\chapter{Conclusions}\label{conclusions}
+\input{Chapters/Conclusions}
+
+
+\chapter*{Appendix}
+\addcontentsline{toc}{chapter}{Appendix}
+\input{Appendix} % or \include{appendixA}
+
+\bibliographystyle{evo3}
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{references.bib}
+
+
+\chapter*{Curriculum Vitae}
+\addcontentsline{toc}{chapter}{Curriculum Vitae}
+\input{CurriculumVitae}
+
+
+\chapter*{Declaration of Authorship}
+\addcontentsline{toc}{chapter}{Declaration of Authorship}
+\input{Declaration}
+
+\end{document}
