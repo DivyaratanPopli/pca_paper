@@ -26,7 +26,7 @@ singlelinecheck=false
 
 
 
-\title{Estimating F-statistics in a probabilistic PCA space}
+\title{A joint framework for the estimation of PCA and F-statistics using ancient DNA}
 \author{Divyaratan Popli, Benjamin M. Peter}
 %\date{5 August 2021}
 \linenumbers
@@ -117,7 +117,7 @@ Probabilistic PCA (PPCA) is an extension of classical PCA that aims to rectify t
 PPCA was introduced by \citep{tipping_probabilistic_1999-1} in a Gaussian setting, where the sampling error is modelled as normally distributed, and each individual is assumed to have the same sampling error (homoskedastic noise). However, in population genetics, genotypes are discrete and thus the sampling errors are binomially distributed. Furthermore, individuals coming from populations with different effective population sizes will have different heterozygosities resulting in heteroskedastic noise. Thus a more sophisticated model that assumes different binomial sampling noise for each individual has been implemented in Latent Subspace Estimation (LSE) \citep{chen_consistent_2015, van_waaij_evaluation_2023, cabreros_likelihood-free_2019}. we give a detailed description of both frameworks in sections \ref{theory-ppca} and \ref{theory-lse}. In summary, the main difference between classical PCA, PPCA and LSE is in the way they model the noise in the observed data due to sampling (see Fig.\ref{fig1:pca_ppca}). 
 
 \begin{figure}[ht!]
-    \includegraphics[width=16.5cm]{Images/ppca/Figures/pca_all_genetic.png}
+    \includegraphics[width=16.5cm]{Images/Figures/pca_all_genetic.png}
     \centering
     \caption{Comparison of classical PCA, PPCA and LSE: we simulated genotypes of 104 individuals belonging to 10 different populations, and compared the top eigenvalues obtained from different PCA methods.}
     \label{fig1:pca_ppca} 
@@ -186,7 +186,7 @@ Crucially however, these interpretations only hold for the (unobserved) populati
 
 
 \begin{figure}[ht!]
-    \includegraphics[width=16.5cm]{Images/ppca/Figures/overview.png}
+    \includegraphics[width=16.5cm]{Images/Figures/overview.png}
     \centering
     \caption{Schematics showing different interpretations of $F$-statistics. The columns represent $F_2(X_1,X_4)$, $F_3(X_1;X_3,X_4)$, $F4(X_1,X_4;X_2,X_3)$, $F4(X_1,X_2,X_3,X_4)$. The first row shows a tree interpretation of each statistic, the second row shows $F$-statistics in an allele-frequency space with three axes representing three SNPs, and the last row is the interpretation of $F$-statistics on a PCA. Blue lines represent the statistic, and the dotted lines represent orthogonal projections. Black squares denote right angles.}
     \label{fig2:overview}
@@ -252,13 +252,6 @@ Crucially, if we use \emph{all} the PCs, the $f$-statistics coincide with LSE (F
     &= G_{11} + G_{44} - 2 G_{14} \label{eq:lse}
 \end{align}
 
-\begin{figure}[ht!]
-    \includegraphics[width=16.5cm]{Images/ppca/Supplement/lse_admix.png}
-    \centering
-    \caption{$f_2(X_1,X_4)$ estimate from LSE converges to the estimate from ADMIXTOOLS 2, when all PCs are used.}
-    \label{figS4:lse_admix}
-\end{figure}
-
 
 The covariance used by LSE is an estimated covariance matrix \citep{van_waaij_evaluation_2023}, and its properties differ from the sample covariance matrix used in classical PCA. In particular, sample covariance matrices are positive semi-definite, which means that all eigenvalues are non-negative. This ensures that the eigenvalues represent the variance among the individuals along the corresponding PCs. In contrast, for an estimated covariance matrix, the expectation of the smallest $M-q$ eigenvalues is zero, and thus an unbiased estimate will have both positive and negative eigenvalues. Therefore, in case of LSE, we can calculate $F_2$ by adjusting eq. \ref{eq:f_pca} to include the sign of the eigenvalues:
 
@@ -286,7 +279,7 @@ In this section, we first describe the coalescent simulations we use to study th
 I simulated 4 populations ($X_1$, $X_2$, $X_3$, $X_4$) with 11 individuals each and 6 populations ($X_5$,..,$X_{10}$) with 10 individuals each using slendr \citep{petr_slendr_2022}. In these simulations, populations $X_6$,..,$X_{10}$ were created from pairwise admixture events between populations $X_1$,..,$X_5$. In addition, we simulated a unidirectional gene flow from $X_3$ to $X_2$ with varying migration rates ($0\%, 1\%, 5\%$) (see Fig. \ref{fig2:sim}). we generated 20 simulations for each case of migration rate to evaluate our framework.  In these simulations, we used a mutation rate of $10^{-8}$ per base per generation, a recombination rate of $10^{-8}$ per base per generation, and a generation time of 30 years. 
 
 \begin{figure}[ht!]
-    \includegraphics[width=16.5cm]{Images/ppca/Figures/sim_final.png}
+    \includegraphics[width=16.5cm]{Images/Figures/sim_final.png}
     \centering
     \caption{Overview of simulations. \textbf{A}. Schematic of the simulation. Numbers reflect split, migration and admixture times (in generations). Admixture events are shown in dashed lines, and the red arrow represents a unidirectional migration from $X_3$ to $X_2$. \textbf{B}. PPCA (with 8 PCs) of data simulated using the admixture graph depicted in A. Percentage labels show variation explained per PC. \textbf{C}. PPCA-biplots of the first 4 PCs.
 }
@@ -310,28 +303,6 @@ PCA is most commonly visualized in biplots (Fig \ref{fig2:sim}C). A main advanta
 In contrast, plotting PCs separately on one dimension has the advantage that the orthogonality of the PCs becomes more apparent, and also allows for easier quantitative comparison on how much each PC explains: The spread (i.e. variance explained) by each PC gets narrow and narrower as we move to higher PCs, and we can easily plot a large number of PCs. The drawback of this representation is that the correlation and 2D-structure in PC-space gets deemphasized. we plot the first 10 PCs from PPCA (scale=8), classical PCA and LSE (Fig. \ref{figS1:ppca_scale}, \ref{figS1:pca_scale}, \ref{figS1:lse_scale}), and find that the population structure represented by the PCs does not change. However, the PCs are scaled differently for different method, and so the absolute position of individuals varies. In particular, for PPCA (scale=8), all PCs $>8$ are scaled with zero, and hence PC 9 and PC 10 in this case look very different from that of classical PCA and LSE.     
 It is interesting to note that a single PC is not informative. One needs to look at all the PCs to get a sense of the population structure. However, the information in the tree and the PC plot is the same, and so the tree can be regenerated from the (top) PCs. 
 
-\begin{figure}[ht!]
-    \includegraphics[width=16.5cm]{Images/ppca/Supplement/pcplot2.png}
-    \centering
-    \caption{Variation in the genetic data explained with the top 8 PCs from PPCA. Each panel shows the position of individuals on a Principal Component. Jitter is added to y-axis to show the data points clearly. The last 2 PCs explain $0\%$ variation because the PPCA model with scale=8 explicitly sets the non- relevant PCs to 0.}
-    \label{figS1:ppca_scale}
-\end{figure}
-
-\begin{figure}[ht!]
-    \includegraphics[width=16.5cm]{Images/ppca/Supplement/pcaplot2.png}
-    \centering
-    \caption{Variation in the genetic data explained with the top 8 PCs from classical PCA. Each panel shows the position of individuals on a Principal Component. Jitter is added to y-axis to show the data points clearly.}
-    \label{figS1:pca_scale}
-\end{figure}
-
-\begin{figure}[ht!]
-    \includegraphics[width=16.5cm]{Images/ppca/Supplement/lseplot2.png}
-    \centering
-    \caption{Variation in the genetic data explained with the top 8 PCs from LSE. Each panel shows the position of individuals on a Principal Component. Jitter is added to y-axis to show the data points clearly.}
-    \label{figS1:lse_scale}
-\end{figure}
-
-
 \paragraph{PCA-based $f_2$ estimates:}
 I use eq. \ref{eq:f_pca} to write custom python scripts for calculating $f$-statistics via  classical PCA, PPCA and LSE, and to compare these $f$-statistics to the true values obtained from  the simulations. we implemented PPCA and LSE using custom R scripts, and classical PCA using prcomp function in R. 
 
@@ -346,56 +317,32 @@ For PPCA, we set the rank of the covariance matrix to the number of PCs, with th
 In the final panel, we estimate $f_2$ with data where we introduce $50\%$ missingness (Fig. \ref{fig:comparison}). Implementing LSE with missing data is beyond the scope of this thesis, and we only compare PCA and PPCA. we again find that PPCA performs well over a fairly large range of number of PCs used but that the estimates become more erratic beyond 23 PCs ($f_2 = 0.0836, 0.0874, 0.1158$ using 7, 23 and 51 PCs respectively). In contrast, the estimates from classical PCA are poor throughout.
 
 \begin{figure}[ht!]
-    \includegraphics[width=16.5cm]{Images/ppca/Figures/mu0.05_main_fig_all_pca.png}
+    \includegraphics[width=16.5cm]{Images/Figures/mu0.05_main_fig_all_pca.png}
     \centering
     \caption{Comparison of PCA approaches using $f_2(X_1,X_4)$ estimated using 11 individuals for each population (top), 1 individual for each population (middle), and 1 individual for each population with $50\%$ missing genotypes (bottom). Dotted line represents biased estimate and dashed lines show the true value of $F_2$ from the simulations. Error bars represent 2 standard errors.}
     \label{fig:comparison}
 \end{figure}
 
-
-\begin{figure}[ht!]
-    \includegraphics[width=16.5cm]{Images/ppca/Supplement/mu0.05_plot_all.png}
-    \centering
-    \caption{Comparison of PPCA and LSE to ADMIXTOOLS 2 using genotypes from 11 individuals in each population. Error bars represent 2 standard errors.}
-    \label{figS5:comparison10}
-\end{figure}
-
-\begin{figure}[ht!]
-    \includegraphics[width=16.5cm]{Images/ppca/Supplement/mu0.05_plot_all_1ind.png}
-    \centering
-    \caption{Comparison of PPCA and LSE to ADMIXTOOLS 2 using genotypes from one individual from each population. Error bars represent 2 standard errors.}
-    \label{figS6:comparison1}
-\end{figure}
-
 In the rest of the analyses (except analyses with missing data), we exclude PCA, and compare PPCA and LSE with 8 and 12 PCs to ADMIXTOOLS 2 \citep{maier_limits_2022}, which is a recent re-implementation of ADMIXTOOLS \citep{patterson_ancient_2012} that gives equivalent results. we chose 8 and 12 PCs because the number of PCs to use may not be known in most applications. we first compare $f_2$, $f_3$ and $f_4$ estimated by these methods from complete simulation data, with all individuals in each population, and no missing genotypes. In this case we find that all the methods perform well, and result in $F$-statistics that are very close to the truth both (Fig. \ref{figS5:comparison10}). 
 
-I then subsample one individual from each population, and observe that in this case both PPCA and LSE- based frameworks perform atleast as well as ADMIXTOOLS 2 (Table \ref{ppca_table_S1}) and the mean estimate from each method is close to the true value. However, the error bars for $f_2$ estimates (obtained using the point estimates from 20 simulations) are slightly lower for PPCA (scale=8) compared to those of ADMIXTOOLS 2: For $F_2(X_1,X_2)$, $F_2(X_3,X_4)$, $F_2(X_2,X_3)$ and $F_2(X_1,X_4)$, ADMIXTOOLS 2 standard errors are 0.0018, 0.0015, 0.0027, and 0.0012 while the PPCA and LSE-based estimates (scale=8) for the same statistics are 0.0012,0.0012,0.0024,0.0011 and 0.0012,0.0012,0.0025,0.0011 respectively). The improved accuracy of PCA-based tools versus ADMIXTOOLS 2 is explained because PCA incorporates a succinct summary of the full data of all the individuals, and thus the PCA-based estimates can ``borrow'' information from related individuals in the sample that are not used to calculate the statistic at hand. In contrast, ADMIXTOOLS 2 has only one individual from each population to assess structure / admixture, and while the estimates based on admixtools 2 are minimum-variance estimators for these subsets of the data \citep{patterson_ancient_2012}, PCA-based methods do better whenever we have data from additional individuals.
+I then subsample one individual from each population, and observe that in this case both PPCA and LSE- based frameworks perform atleast as well as ADMIXTOOLS 2 (Table S1) and the mean estimate from each method is close to the true value. However, the error bars for $f_2$ estimates (obtained using the point estimates from 20 simulations) are slightly lower for PPCA (scale=8) compared to those of ADMIXTOOLS 2: For $F_2(X_1,X_2)$, $F_2(X_3,X_4)$, $F_2(X_2,X_3)$ and $F_2(X_1,X_4)$, ADMIXTOOLS 2 standard errors are 0.0018, 0.0015, 0.0027, and 0.0012 while the PPCA and LSE-based estimates (scale=8) for the same statistics are 0.0012,0.0012,0.0024,0.0011 and 0.0012,0.0012,0.0025,0.0011 respectively). The improved accuracy of PCA-based tools versus ADMIXTOOLS 2 is explained because PCA incorporates a succinct summary of the full data of all the individuals, and thus the PCA-based estimates can ``borrow'' information from related individuals in the sample that are not used to calculate the statistic at hand. In contrast, ADMIXTOOLS 2 has only one individual from each population to assess structure / admixture, and while the estimates based on ADMIXTOOLS 2 are minimum-variance estimators for these subsets of the data \citep{patterson_ancient_2012}, PCA-based methods do better whenever we have data from additional individuals.
 
-\input{Tables/ppca/table1}
 
 \subsection{Missing data}
-Next, we address the issue of missing data and evaluate the estimation of $F$-statistics using one individual from each population with these methods when there is $50\%$ random missing data. Our implementation of PPCA with missing data is inspired from EMU \citep{meisner_large-scale_2021}, and is described in Methods section \ref{method-ppca}. However, the EMU implementation aims to reproduce classical PCA, and hence would result in biased estimates. Our correction is able to produce accurate $f$-statistics using PPCA (Fig. \ref{fig:comparison-adm}, Table \ref{ppca_table_S1}), whereas both EMU and  ADMIXTOOLS 2 estimates are inflated For the case of missing data, ADMIXTOOLS2 was run with maxmiss=1, so no SNPs are excluded. It was not possible to run ADMIXTOOLS 2 using sites with no missing data since with $50\%$ missing sites, very few sites are without missingness. 
+Next, we address the issue of missing data and evaluate the estimation of $F$-statistics using one individual from each population with these methods when there is $50\%$ random missing data. Our implementation of PPCA with missing data is inspired from EMU \citep{meisner_large-scale_2021}, and is described in Methods section \ref{method-ppca}. However, the EMU implementation aims to reproduce classical PCA, and hence would result in biased estimates. Our correction is able to produce accurate $f$-statistics using PPCA (Fig. \ref{fig:comparison-adm}, Table S1, whereas both EMU and ADMIXTOOLS 2 estimates are inflated For the case of missing data, ADMIXTOOLS2 was run with maxmiss=1, so no SNPs are excluded. It was not possible to run ADMIXTOOLS 2 using sites with no missing data since with $50\%$ missing sites, very few sites are without missingness. 
 
 \begin{figure}[ht!]
-    \includegraphics[width=16.5cm]{Images/ppca/Figures/mu0.05_plot_all_1ind_missing.png}
+    \includegraphics[width=16.5cm]{Images/Figures/mu0.05_plot_all_1ind_missing.png}
     \centering
     \caption{Comparison of PPCA and classical PCA to ADMIXTOOLS 2 in the presence of $50\%$ random missingness, using genotypes from one individual from each population. Red dashed line reflects the true value. Error bars represent 2 standard errors.}
     \label{fig:comparison-adm}
 \end{figure}
 
-\begin{figure}[ht!]
-    \includegraphics[width=16.5cm]{Images/ppca/Supplement/hypothesis_test_comparison.png}
-    \centering
-    \caption{Test for admixture with F4 statistic using one individual from each population and no missing data. we compare ADMIXTOOLS 2 (orange) to PPCA-based-framework (blue) using 20 simulations. Jitter is added on x-axis for visual clarity.}
-    \label{figS7:test}
-\end{figure}
-
-
 \subsection{Test of admixture}
 A major application of $F$-statistics are tests of admixture \citep{orlando_ancient_2021}. we showed in the previous section that PPCA framework can be used to calculate the point estimates of $F$-statistics. In this section we show that we can also get standard errors for these estimates using block-jackknife \citep{kunsch_jackknife_1989,maier_limits_2022, patterson_modication_2020}, and use these to do hypothesis testing for admixture. we simulate a gene flow from $X_3$ to $X_2$ 500 generations ago with the migration rate of $\mu \epsilon [0, 0.01, 0.05]$. we then compare the estimates of $F$-statistics from PPCA framework to that from ADMIXTOOLS 2. we first test for admixture by checking if the estimate of $F_4(X_1,X_2;X_3,X_4)$ is significantly different from 0. we show that when there are 11 individuals in each population, both methods perform well (Fig. \ref{figS7:test}). In case of 0 migration rate, both methods estimate $F_4$ for all simulations to be close to 0, while at $5\%$ migration rate, ADMIXTOOLS 2 and PPCA-framework have the power to detect admixture (with $F_4$ estimate 2 standard deviations below 0) in $90\%$ and $70\%$ simulations respectively. At migration rate of $1\%$, both the methods are unable to find admixture between $X_2$ and $X_3$, and instead incorrectly predict admixture between $X_1$ and $X_3$ ($F_4$ estimate is 2 standard deviations above the mean) for one simulation. Reducing the number of individuals to 1 from each population and adding $50\%$ missingness reduces the power for both the methods. In this case, both methods have no false positives in case of 0 migration rate, and at $5\%$ migration rate ADMIXTOOLS 2 and PPCA framework detect admixture in $5\%$ and $35\%$ simulations respectively. At $1\%$ migration rate, ADMIXTOOLS 2 infers admixture between $X_2$ and $X_3$ in 2 simulations and incorrect admixture between $X_1$ and $X_3$ in one simulation, while PPCA framework shows no prediction of admixture.
 
 \begin{figure}[ht!]
-    \includegraphics[width=16.5cm]{Images/ppca/Figures/hypothesis_test_comparison.png}
+    \includegraphics[width=16.5cm]{Images/Figures/hypothesis_test_comparison.png}
     \centering
          \caption{Test for admixture with individual-based $f_4(X_1, X_2, X_3, X_4)$ statistic. we compare ADMIXTOOLS 2 (orange) to PPCA-based-framework (blue) using 20 simulations with $50\%$ missing genotypes. Jitter is added on x-axis for visual clarity.}
     \label{fig:admixture}
@@ -420,7 +367,7 @@ Using ADMIXTOOLS 2, we found that $f_2$(Altai, Vindija33.19) and $f_2$(Altai, Vi
 One explanation for this is that Vindija 87 is pseudohaploid, and the unbiased estimator in ADMIXTOOLS 2 for $F_2$ is undefined for single pseudohaploid genomes ($n_{1s}=1$ in eq. \ref{eq:f2_correction}), and so ADMIXTOOLS2 defaults to a biased estimator. In contrast, the PPCA-based estimator is still defined and can be used in this case, but it introduces the assumption that the samples have similar heterozygosities. 
 
 \begin{figure}[ht!]
-    \includegraphics[width=16.5cm]{Images/ppca/Figures/nea_main.png}
+    \includegraphics[width=16.5cm]{Images/Figures/nea_main.png}
     \centering
     \caption{\textbf{A}. PCA of archaic neandertals created with smartpca with high coverage neandertals, and projection of the rest. we use  two PCs because we just have three high-coverage samples.
     \textbf{B}. PPCA of archaic specimens with scale=2. In A and B, The $\%$ variance on x and y-axes denotes the $\%$ variance explained by the population structure. \textbf{C}. $F_3$(Altai, Vindija33.19, X) estimated with ADMIXTOOLS 2 and PPCA-based-framework. Larger value on x-axis represents more proximity to Vindija33.19. Bars show 2 standard errors.}
