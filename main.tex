@@ -232,12 +232,12 @@ where $N$ denotes a multivariate normal distribution, $\MX_c$ is again the cente
 
 To fit the PPCA model to a dataset, we need to estimate the parameters of the model, namely $\mathbf{W}$ and $\Psi$ given the observed data. For complete data, $\Psi$ and $\mathbf{W}$ can be calculated from SVD using the maximum-likelihood estimators \citep{tipping_probabilistic_1999}:
 \begin{align*}
-    \hat{\Psi} &= \frac{1}{M-q}\sum_{j=q+1}^M e_{j}^2\\
-    \hat{\mathbf{W}} &= \mathbf{U}(\mathbf{E}^2 - \hat{\Psi}\BI)^{1/2},
+    \hat{\Psi} &= \frac{1}{M-q}\sum_{j=q+1}^M \lambda_{j}\\
+    \hat{\mathbf{W}} &= \mathbf{U}(\Lambda - \hat{\Psi}\BI)^{1/2},
 \end{align*}
-where $e_j$, the $j$-th singular value, is the $j$-th entry on the diagonal of $\mathbf{E}$.
+where $\lambda_j$, the $j$-th eigen value, is the $j$-th entry on the diagonal of $\Lambda$.
 
-Intuitively, the error term is just an average of all the eigenvalues that correspond to the eigenvectors that are thought of as contributing to the sampling noise, and therefore it is subtracted from the diagonal matrix of eigenvalues $\mathbf{E}$. Thus, the MLE solution of PPCA results differs from that of classical PCA only in that the first $q$ PCs are ``shrunk'' using a common term that incorporates the noise discarded in the PCA, and the last $M-q$ PCs are set to zero. Notably a classical PCA plot would look almost the same, only the axes scales would be different. Notably, for PPCA we need to set the number of retained dimensions $q$ a priori, since changing $q$ requires rescaling all PCs. In addition, setting $q=M-1$ or $\Psi=0$ recoups classical PCA. Similar to the case of classical PCA, we can use eq. \ref{eq:f_pca} to calculate $F$-statistics using PPCA.
+Intuitively, the error term is just an average of all the eigenvalues that correspond to the eigenvectors that are thought of as contributing to the sampling noise, and therefore it is subtracted from the diagonal matrix of eigenvalues $\Lambda$. Thus, the MLE solution of PPCA results differs from that of classical PCA only in that the first $q$ PCs are ``shrunk'' using a common term that incorporates the noise discarded in the PCA, and the last $M-q$ PCs are set to zero. Notably a classical PCA plot would look almost the same, only the axes scales would be different. Notably, for PPCA we need to set the number of retained dimensions $q$ a priori, since changing $q$ requires rescaling all PCs. In addition, setting $q=M-1$ or $\Psi=0$ recoups classical PCA. Similar to the case of classical PCA, we can use eq. \ref{eq:f_pca} to calculate $F$-statistics using PPCA.
 
 \subsection{LSE and $F$-statistics}\label{theory-lse}
 The drawback of PPCA is that it models the sampling error as the same for each sample, but in genetic data the error is binomially distributed. In addition, one needs to know $q$ a priori. LSE (Latent Subspace Estimation) is a dimensionality reduction technique that addresses these issues. LSE is quite similar to PPCA, with the difference that it accounts for the heteroscedasticity in the data \citep{chen_consistent_2015}, and explicitly models the binomial error in genetic data. The intuitive idea here is to calculate the sampling error for each sample assuming a binomial distribution, and to remove this error from the covariance matrix before doing SVD. So, in this algorithm, we calculate the heterozygosity  $d_{jj} = \frac{1}{S}\sum_{s=1}^S x_{js}(1 - x_{js})$ from $\MX$. We define $\mathbf{D}$ as a diagonal matrix with entries  $d_{jj}$. One can then estimate covariance matrix $\MG$ = $\frac{1}{S}\MX^T\MX - \mathbf{D}$. The eigenvectors of $\mathbf{G}$ then span the latent subspace of $\mathbf{L}$ , and the expected value of the smallest $M-q$ eigenvalues converge to 0 for large M \citep{cabreros_likelihood-free_2019}.
@@ -252,9 +252,9 @@ The covariance used by LSE is an estimated covariance matrix \citep{van_waaij_ev
 
 
 \begin{align}\label{eq:f_lse}
-F_2(X_1,X_4) &= \sum_{j=1}^{M}\mathbb{I}(e_j^2 \geq 0) (w_{1j} - w_{4j})^2 - \sum_{j=1}^M \mathbb{I}(e_j^2 <0) (w_{1j} - w_{4j})^2,
+F_2(X_1,X_4) &= \sum_{j=1}^{M}\mathbb{I}(\lambda_j \geq 0) (w_{1j} - w_{4j})^2 - \sum_{j=1}^M \mathbb{I}(\lambda_j <0) (w_{1j} - w_{4j})^2,
 \end{align}
-where $e_j^2$ denotes the $j$-th eigenvalue of $\mathbf{G}$, and $\mathbb{I}$ denotes the indicator function that is 1 when the condition is satisfied, and zero otherwise.
+where $\lambda_j$ denotes the $j$-th eigenvalue of $\mathbf{G}$, and $\mathbb{I}$ denotes the indicator function that is 1 when the condition is satisfied, and zero otherwise.
 
 
 \subsection{Missing data}
@@ -355,7 +355,7 @@ Overall, we find the resulting pattern to be similar between the methods, but th
 \end{dmath}
 
 and analyze them seperately for ADMIXTOOLS2 and PPCA.
-Using ADMIXTOOLS 2, we found that $f_2$(Altai, Vindija33.19) and $f_2$(Altai, Vindija 87) have values 0.072 and 0.135,  respectively. Since both Vindija samples are from the same individual, the $f_2$-values are expected to be the identical. In contrast, using the PPCA framework, we obtain the values of $f_2$(Altai, Vindija33.19)=0.102 and $f_2$(Altai, Vindija 87)=0.115, respectively, which are much closer. In addition, $f_2$ should be 0 for two samples from the same individual (i.e. Vindija33.19, Vindija 87). ADMIXTOOLS 2 yields a value of 0.0057, and the PPCA-framework results in a smaller value of 0.00094. Further, we show in Fig. S8
+Using ADMIXTOOLS 2, we found that $f_2$(Altai, Vindija33.19) and $f_2$(Altai, Vindija 87) have values 0.072 and 0.135,  respectively. Since both Vindija samples are from the same individual, the $f_2$-values are expected to be the identical. In contrast, using the PPCA framework, we obtain the values of $f_2$(Altai, Vindija33.19)=0.102 and $f_2$(Altai, Vindija 87)=0.115, respectively, which are much closer. In addition, $f_2$ should be 0 for two samples from the same individual (i.e. Vindija33.19, Vindija 87). ADMIXTOOLS 2 yields a value of 0.0057, and the PPCA-framework results in a smaller value of 0.00094. Further, we show that f2(Altai, Vindija33.19) is closer to f3(Altai; Vindija33.19, Vindija 87) when estimated from PPCA with 8 PCs compared to that estimated from ADMIXTOOLS 2 (Fig. S8).
 
 One explanation for this is that Vindija 87 is pseudohaploid, and the unbiased estimator in ADMIXTOOLS 2 for $F_2$ is undefined for single pseudohaploid genomes ($n_{1s}=1$ in eq. \ref{eq:f2_correction}), and so ADMIXTOOLS2 defaults to a biased estimator. In contrast, the PPCA-based estimator is still defined and can be used in this case, but it introduces the assumption that the samples have similar heterozygosities. 
 
@@ -376,10 +376,11 @@ We implement PPCA using maximum-likelihood approach following \cite{tipping_prob
 \begin{enumerate}
     \item Mean center data $\MX_c = \MX - \mu$.
     \item Set missing values to 0.
-    \item Perform SVD of $\MX_c$, $\MX_c = \mathbf{UEV}^T$.
-    \item Calculate the MLE of the Gaussian noise parameter $\Psi = \frac{1}{M-q} \sum_{j=M-q}^ M e_j^2$ as the average of square of the $M-q$ smallest singular values.
-    \item Obtain the MLE of the $q^{th}$ eigenvalue as $e_q^2 - \Psi$.
-    \item Calculate the linear mapping matrix $\BW = \mathbf{U} (\mathbf{E}^2 - \Psi\BI)^{1/2}$.
+    \item Get covariance matrix $\mathbf{C}$ = $\frac{1}{S} \MX_c\MX_c^T$
+    \item Perform eigen value decomposition of $\mathbf{C}$, $\mathbf{C} = \mathbf{VEV}^T$.
+    \item Calculate the MLE of the Gaussian noise parameter $\Psi = \frac{1}{M-q} \sum_{j=M-q}^ M \lambda_j$ as the average of square of the $M-q$ smallest singular values.
+    \item Obtain the MLE of the $q^{th}$ eigenvalue as $\lambda_q - \Psi$.
+    \item Calculate the linear mapping matrix $\BW = \mathbf{V} (\Lambda - \Psi\BI)^{1/2}$.
     \item Reconstruct mean-centered data: $\mathbf{X_R} = \BW(\BW^T\BW)^{-1}\BW^T\MX_c$.
     \item Replace missing value with reconstructed values.
     \item Repeat steps 2-8 until convergence.
@@ -422,10 +423,10 @@ Different PCA methods we discussed here differ in how they deal with biological 
 
 Classical PCA is mathematically the simplest, and still the most widely used method for visualizing population structure. It has an interpretation in terms of pairwise coalescent times \citep{mcvean_genealogical_2009}. However, because classical PCA incorporates \emph{all} variation in the data, it does not distinguish between variation due to population structure, and variation due to sampling. This can lead to problems: For example, one cannot directly project additional samples to a PCA, instead some correction is required otherwise some ``shrinkage'' occurs where new samples are projected closer to the origin \citep{patterson_population_2006, wang_improved_2015}. Thus, in our opinion classical PCA should be the primary choice for analyses primarily aimed at quality control, because incorporating noise allows it to reveal technical artifacts and outliers. Effects of different sequencing or capturing techniques will very often be visible on a PCA-plot, while they may be more hidden and only partially corrected in PPCA.
 
-Our results suggest that the methods that separate sampling noise from population structure, such as PPCA and LSE, are preferable to classical PCA when the primary goal is to depict population structure. PPCA is the simpler of the two methods, because it assumes homoskedastic noise, i.e. that all samples have the same heterozygosity or sampling variance. As \cite{tipping_probabilistic_1999-1} showed, without missing data, the maximum-likelihood estimator of PPCA results in virtually identical PCA plots compared to those obtained from a classical PCA; the only differences are that the axes for the first few PCs will be re-scaled, and that the majority of PCs are set to zero (Fig. \ref{figS1:ppca_scale}, Fig. \ref{figS1:pca_scale}).
+Our results suggest that the methods that separate sampling noise from population structure, such as PPCA and LSE, are preferable to classical PCA when the primary goal is to depict population structure. PPCA is the simpler of the two methods, because it assumes homoskedastic noise, i.e. that all samples have the same heterozygosity or sampling variance. As \cite{tipping_probabilistic_1999-1} showed, without missing data, the maximum-likelihood estimator of PPCA results in virtually identical PCA plots compared to those obtained from a classical PCA; the only differences are that the axes for the first few PCs will be re-scaled, and that the majority of PCs are set to zero (Fig. S1, Fig. S2).
 
 
-LSE goes one step further by modelling heteroskedastic, binomial noise. This ensures that both PCA and $F$-statistics use the exact same modelling assumptions, and thus LSE-based PCA plots are directly comparable to $F$-statistics (Fig. \ref{figS4:lse_admix}). This relationship is exact if all PCs are used. One advantage of LSE is that the eigenvalues corresponding to the PCs irrelevant for population variation have an expectation of zero. Since these eigenvalues are directly proportional to the amount of variance explained per PC, and to the contribution to $F$-statistics, we expect that truncating them will yield good results, which is indeed what we see in simulation results (Fig. \ref{figS1:lse_scale}). 
+LSE goes one step further by modelling heteroskedastic, binomial noise. This ensures that both PCA and $F$-statistics use the exact same modelling assumptions, and thus LSE-based PCA plots are directly comparable to $F$-statistics (Fig. S4). This relationship is exact if all PCs are used. One advantage of LSE is that the eigenvalues corresponding to the PCs irrelevant for population variation have an expectation of zero. Since these eigenvalues are directly proportional to the amount of variance explained per PC, and to the contribution to $F$-statistics, we expect that truncating them will yield good results, which is indeed what we see in simulation results (Fig. S3). 
 
 In real data, this expectation of zero for the eigenvalues will typically yield both positive and negative eigenvalues, which is why the equation for computing $f_2$ needs to be adjusted (eq. \ref{eq:f_lse}), and subtract the contribution to $F_2$ by PCs that have negative eigenvalues.
 
