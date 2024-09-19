@@ -1,0 +1,453 @@
+import sim_functions as sim
+import fstatistics_functions as ff
+import numpy as np
+
+st_array1 = np.array([1,2,5,5.5])
+mutation_rate=1e-8
+recombination_rate=1e-8
+length=1e8
+mgen=0.5
+mulist=[0,0.01,0.05]
+#mulist=[0,0.1]
+runlist=list(range(1,21))
+
+npc_list=np.arange(2,100,4)
+
+larr1=np.array(range(2,15))
+larr2=np.arange(15,104,4)
+npc_list1 = np.append(larr1,larr2)
+
+gt=30
+true_npop=10
+
+mgen_array1 = np.array([1.5, 0.4, 0.1, 2.4, 0.2])
+madm_array1 = np.array([0.8, 0.5, 0.4, 0.6, 0.6])
+
+pop5,pop6,pop7,pop8,pop9,pop10="pop5","pop6","pop7","pop8","pop9","pop10"
+
+###############################IMPORTANT: note that in fstatistics rule to calculate adjusted f stats, I have used populations fixed as 0,1,2,3
+
+
+
+rule slendrSimulate:
+    output:
+        genfile="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/eigen.geno",
+        indfile="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/eigen.ind",
+        snpfile="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/eigen.snp",
+        outf2="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/true_val/f2mat",
+        outfile="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/true_val/fstats.csv"
+
+    params:
+        st_array=st_array1,
+        gentime=gt,
+        mgen_array=mgen_array1,
+        madm_array=madm_array1,
+        mgen=mgen,
+        mutation_rate=mutation_rate,
+        recombination_rate=recombination_rate,
+        length=length
+
+    script: "slendr_sim.R"
+
+
+
+rule eigenWrapper: #Converts .geno file format to add commas, so it's easier to input in python
+    input:
+        genof="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/eigen.geno"
+    output:
+        outf="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/eigen.geno_pc",
+    script: "convert_geno.R"
+
+
+rule trueF2:
+    input:
+        f2mat=expand("simfiles/Ne{{Ne}}/split_times{{sp}}/mu{{mu}}/run{RID}/npop{{npop}}_nind{{nind}}/true_val/f2mat", RID=runlist),
+        fall=expand("simfiles/Ne{{Ne}}/split_times{{sp}}/mu{{mu}}/run{RID}/npop{{npop}}_nind{{nind}}/true_val/fstats.csv", RID=runlist)
+
+    output:
+        avgf="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/avgrun/npop{npop}_nind{nind}/true_val/fstats_scale{npcs}.csv",
+        avgf2="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/avgrun/npop{npop}_nind{nind}/true_val/f2mat{npcs}",
+    run:
+        ff.ftrue(f2list=input.f2mat, flist=input.fall, outf2=output.avgf2, outf=output.avgf)
+
+
+rule pop_label:
+    input:
+        indfile=folder + "simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/eigen.ind",
+    output:
+        popfile="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/eigen_pop.ind",
+    run:
+        ff.ind2pop(indfile=input.indfile, popfile=output.popfile)
+
+
+rule eigen_snp:
+    input:
+        snpfile=folder+"simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/eigen.miss.snp",
+    output:
+        snpfile="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/eigen_pop.snp",
+    shell:
+        """cp {input.snpfile} {output.snpfile}"""
+
+rule eigen_ind:
+    input:
+        indfile=folder + "simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/eigen.miss.ind",
+    output:
+        indfile="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/eigen_pop.ind",
+    shell:
+        """cp {input.indfile} {output.indfile}"""
+
+
+rule eigen_geno:
+    input:
+        genofile=folder + "simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/eigen.miss.geno",
+    output:
+        genofile="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/eigen_pop.geno",
+    shell:
+        """cp {input.genofile} {output.genofile}"""
+
+rule eigen_geno_pc:
+    input:
+        genofile_pc=folder + "simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/eigen.miss.geno_pc",
+    output:
+        genofile_pc="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/eigen_pop.geno_pc",
+    shell:
+        """cp {input.genofile_pc} {output.genofile_pc}"""
+
+rule cp_:
+    input:
+        true=folder + "simfiles/Ne{Ne}/split_times{sp}/mu{mu}/avgrun/npop{npop}_nind{nind}/true_val/f2mat15",
+    output:
+        true="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/avgrun/npop{npop}_nind{nind}/true_val/f2mat{npcs}"
+    shell:
+        """cp {input.true} {output.true}"""
+
+rule runAdmixtools2:
+    input:
+        prefix="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/eigen_pop.geno",
+        snp="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/eigen_pop.snp",
+        ind="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/eigen_pop.ind",
+    params:
+        f2_dir="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/admixtools2_fmat",
+        pop1="pop1_1",
+        pop2="pop2_1",
+        pop3="pop3_1",
+        pop4="pop4_1",
+    output:
+        outfile="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/admixtools2/fstats.csv",
+        outf2="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/admixtools2/f2mat"
+    script: "run_admixtools2.R"
+
+rule runAdmixtools2_nomiss:
+    input:
+        prefix="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/eigen_pop.geno",
+        snp="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/eigen_pop.snp",
+        ind="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/eigen_pop.ind",
+    params:
+        f2_dir="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/admixtools2_fmat_nomiss",
+        pop1="pop1_1",
+        pop2="pop2_1",
+        pop3="pop3_1",
+        pop4="pop4_1",
+    output:
+        outfile="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/admixtools2_nomiss/fstats.csv",
+        outf2="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/admixtools2_nomiss/f2mat"
+    script: "run_admixtools2_nomiss.R"
+
+rule falladm:
+    input:
+        xx=expand("simfiles/Ne1000/split_times1000/mu0.05/run{RID}/npop10_nind100/missing0.5/admixtools2_nomiss/fstats.csv",RID=runlist)
+
+
+rule fAdmix:
+    input:
+        admix= "simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/admixtools2/fstats.csv",
+        genof= "simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/eigen_pop.geno",
+        f2inf= "simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/admixtools2/f2mat",
+    output:
+        outfile="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/admixtools2Norm/fstats_scale{npcs}.csv",
+        f2out="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/admixtools2Norm/f2mat{npcs}",
+    run:
+        ff.admix_scale(dataf=input.admix, genof=input.genof, outfile=output.outfile, f2inf=input.f2inf, f2normf=output.f2out)
+
+
+rule pcaMethods_ppca:
+    input:
+        dataf= "simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/eigen_pop.geno_pc",
+    output:
+        outfile= "simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/pcs_method_{method}/pcs_npcs{npcs}.csv",
+    script: "pca_methods_ppca_direct.R"
+
+
+rule fPca_ppca:
+    input:
+        genof="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/eigen_pop.geno_pc",
+        popf="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/eigen_pop.ind",
+        emuf=folder+"simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/emu_{npcs}/pcs.csv",
+        missf="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/pcs_method_ppca_miss/pcs_npcs{npcs}.csv",
+    output:
+        outfile_emu="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/emu_val/fstats_scale{npcs}.csv",
+        f2out_emu="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/emu_val/f2mat{npcs}",
+        outfile_miss="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/ppca_miss_val/fstats_scale{npcs}.csv",
+        f2out_miss="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/ppca_miss_val/f2mat{npcs}",
+    params:
+        pop1="pop1_1",
+        pop2="pop2_1",
+        pop3="pop3_1",
+        pop4="pop4_1",
+    run:
+        ff.fstats(dataf=input.emuf, genof=input.genof, popf=input.popf, S1=params.pop1, S2=params.pop2, S3=params.pop3, S4=params.pop4, outfile=output.outfile_emu, f2out=output.f2out_emu, scale=wildcards.npcs, flag="pca_methods")
+        ff.fstats(dataf=input.missf, genof=input.genof, popf=input.popf, S1=params.pop1, S2=params.pop2, S3=params.pop3, S4=params.pop4, outfile=output.outfile_miss, f2out=output.f2out_miss, scale=wildcards.npcs, flag="pca_methods")
+
+
+
+"""
+rule emu:
+    input:
+        emuf="simfiles/Ne{Ne}/split_times{sp}/mu0/run1/npop4_nind400/missing0/subsetInds40/p1pop1_p2pop2_p3pop3_p4pop4/plinkf/res.emu.eigenvecs"
+    output:
+        outf="simfiles/Ne{Ne}/split_times{sp}/mu0/run1/npop4_nind400/missing0/subsetInds40/p1pop1_p2pop2_p3pop3_p4pop4/pcs_method_emu/pcs_npcs20.csv"
+    run:
+        import numpy as np
+        f=np.loadtxt(input.emuf,dtype='float', delimiter=" ")
+        z=np.zeros([40,20])
+        f1=np.hstack((f,z))
+        np.savetxt(fname=output.outf, X=f1.T, delimiter=",")
+"""
+rule fNoisy_adj:
+    input:
+        dataf="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/eigen_pop.geno_pc",
+        genof="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/eigen_pop.geno_pc",
+        popf="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/eigen_pop.ind"
+    params:
+        pop1="pop1_1",
+        pop2="pop2_1",
+        pop3="pop3_1",
+        pop4="pop4_1",
+    output:
+        outfile_data="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/noisy_val/fstats_scale{npcs}.csv",
+        f2out="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/noisy_val/f2mat{npcs}",
+        outfile_adj="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/adjusted_val/fstats_scale{npcs}.csv",
+        f2out_adj="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/missing{miss}/adjusted_val/f2mat{npcs}",
+    run:
+        ff.fstats(dataf=input.dataf, genof=input.genof, popf=input.popf, S1=params.pop1, S2=params.pop2, S3=params.pop3, S4=params.pop4, outfile=output.outfile_data, f2out=output.f2out, flag="noisy", scale=wildcards.npcs)
+        ff.fstats(dataf=input.dataf, genof=input.genof, popf=input.popf, S1=params.pop1, S2=params.pop2, S3=params.pop3, S4=params.pop4, outfile=output.outfile_adj, f2out=output.f2out_adj, flag="adjusted", scale=wildcards.npcs)
+
+
+rule ess:
+    input:
+        fname="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/eigen.geno_pc"
+    output:
+        outfile="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/sample_size.txt"
+    script: "autocorrelation_test.R"
+
+
+rule f4Test:
+    input:
+        fppca="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/pcs_method_ppca_direct/pcs_npcs{npcs}.csv",
+        fpos="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/sample_size.txt",
+        popf="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/eigen.ind",
+    params:
+        pop1="pop1_1",
+        pop2="pop2_1",
+        pop3="pop3_1",
+        pop4="pop4_1",
+    output:
+        fout="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/ppca_direct_val_scale{npcs}/ll.csv",
+    run:
+        ff.f4_test(fpos=input.fpos, fppca=input.fppca, popf=input.popf, S1=params.pop1,
+            S2=params.pop2, S3=params.pop3, S4=params.pop4,
+            scale=wildcards.npcs, fout=output.fout)
+
+rule allFtest:
+    input:
+        ftest= expand("simfiles/Ne{{Ne}}/split_times{{sp}}/mu{mu}/run{RID}/npop{{npop}}_nind{{nind}}/ppca_direct_val_scale{{npcs}}/ll.csv", mu=mulist, RID=runlist),
+        admix=expand("simfiles/Ne{{Ne}}/split_times{{sp}}/mu{mu}/run{RID}/npop{{npop}}_nind{{nind}}/admixtools2/fstats.csv", mu=mulist, RID=runlist),
+    output:
+        fout="simfiles/AvgFolder/Ne{Ne}/split_times{sp}/npop{npop}_nind{nind}/ppca_direct_val_scale{npcs}/ll.csv"
+    run:
+        ff.all_ftest(ftest=input.ftest, fadmix=input.admix, mu=mulist, runs=runlist, fout=output.fout)
+
+rule plot_comparison:
+    input:
+        fname="simfiles/AvgFolder/Ne{Ne}/split_times{sp}/npop{npop}_nind{nind}/ppca_direct_val_scale{npcs}/ll.csv"
+    output:
+        fout="simfiles/AvgFolder/Ne{Ne}/split_times{sp}/npop{npop}_nind{nind}/plots_{npcs}/hypothesis_test_comparison.png"
+    script:
+        "plot_comp.R"
+"""
+rule makePlot:
+    input:
+        flist=expand("simfiles/Ne{{Ne}}/split_times{{sp}}/mu{{mu}}/run{{RID}}/fstatistics_npop{{npop}}_nind{{nind}}/{vals}/fstats_scale{{npcs}}_p1{{pop1}}_p2{{pop2}}_p3{{pop3}}_p4{{pop4}}_extrap5{{pop5}}_flag{{flag}}.csv", vals=["noisy_val","true_val","pca_val","ppca_direct_val","admixtools2Norm", "adjusted_val"]),
+        fscale2="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/fstatistics_npop{npop}_nind{nind}/ppca_direct_val/fstats_scale{npcs2}_p1{pop1}_p2{pop2}_p3{pop3}_p4{pop4}_extrap5{pop5}.csv"
+    output:
+        outplot="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/plots_npop{npop}_nind{nind}/plot_scale{npcs}_{npcs2}_p1{pop1}_p2{pop2}_p3{pop3}_p4{pop4}_extrap5{pop5}_flag{flag}.png"
+    script:"plot_fstats.R"
+
+
+rule makeTable:
+    input:
+        ftrue="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/avgrun/npop{npop}_nind{nind}/true_val/f2mat{npcs}",
+        fmat="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/{vals}/f2mat{npcs}"
+    output:
+        out="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/run{RID}/npop{npop}_nind{nind}/tables/accuracy_{vals}_scale{npcs}"
+    run:
+        ff.make_table(ftrue=input.ftrue, fmat=input.fmat, outfile=output.out)
+"""
+
+rule F3_F4:
+    input:
+        alltab=expand("simfiles/Ne{{Ne}}/split_times{{sp}}/mu{{mu}}/run{RID}/npop{{npop}}_nind{{nind}}/missing{{miss}}/{{vals}}/f2mat{{npcs}}", RID=runlist)
+    output:
+        mout="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/average_run/npop{npop}_nind{nind}/missing{miss}/fstats_avg_{vals}_scale{npcs}",
+        sout="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/average_run/npop{npop}_nind{nind}/missing{miss}/fstats_std_{vals}_scale{npcs}",
+    run:
+        ff.f3_f4(allf=input.alltab, meanf=output.mout, stdf=output.sout)
+
+rule rerun:
+    input:
+        mout=expand("simfiles/Ne1000/split_times1000/mu{mu}/average_run/npop10_nind100/missing0.5/fstats_avg_{vals}_scale{npcs}", mu=0.05,vals=["ppca_miss_val","emu_val"],npcs=npc_list1),
+        sout=expand("simfiles/Ne1000/split_times1000/mu{mu}/average_run/npop10_nind100/missing0.5/fstats_std_{vals}_scale{npcs}", mu=0.05,vals=["ppca_miss_val","emu_val"],npcs=npc_list1)
+
+rule true_f34:
+    input:
+        alltab="simfiles/Ne1000/split_times1000/mu0.05/avgrun/npop10_nind100/true_val/f2mat15"
+    output:
+        mout="simfiles/Ne1000/split_times1000/mu0.05/average_run/npop10_nind100/missing{miss}/fstats_avg_true_val",
+    run:
+        ff.f3_f4_true(allf=input.alltab, meanf=output.mout)
+
+
+rule f3f4tables:
+    input:
+        f_avg=expand("simfiles/Ne1000/split_times1000/mu0.05/average_run/npop10_nind100/missing{{miss}}/fstats_avg_{method}_scale{npcs}", method=["emu_val", "ppca_miss_val", "admixtools2Norm"],npcs=[8,12]),
+        f_std=expand("simfiles/Ne1000/split_times1000/mu0.05/average_run/npop10_nind100/missing{{miss}}/fstats_std_{method}_scale{npcs}", method=["emu_val", "ppca_miss_val", "admixtools2Norm"],npcs=[8,12]),
+
+        f_true="simfiles/Ne1000/split_times1000/mu0.05/average_run/npop10_nind100/missing{miss}/fstats_avg_true_val",
+    output:
+        f3out="simfiles/Ne{Ne}/split_times{sp}/npop{npop}_nind{nind}/missing{miss}/plots_{npcs}_{npcs2}/mu{mu}_f3.csv",
+        f4out="simfiles/Ne{Ne}/split_times{sp}/npop{npop}_nind{nind}/missing{miss}/plots_{npcs}_{npcs2}/mu{mu}_f4.csv",
+    script:
+        "f3_f4_tables.R"
+
+
+rule f2tables:
+    input:
+        flist=expand("simfiles/Ne{{Ne}}/split_times{{sp}}/mu{{mu}}/average_run/npop{{npop}}_nind{{nind}}/missing{{miss}}/avgAccuracy_{vals}_scale{{npcs}}", vals=["emu_val","ppca_miss_val","admixtools2Norm"]),
+        fscale2="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/average_run/npop{npop}_nind{nind}/missing{miss}/avgAccuracy_ppca_miss_val_scale{npcs2}",
+        pscale2="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/average_run/npop{npop}_nind{nind}/missing{miss}/avgAccuracy_emu_val_scale{npcs2}",
+        slist=expand("simfiles/Ne{{Ne}}/split_times{{sp}}/mu{{mu}}/average_run/npop{{npop}}_nind{{nind}}/missing{{miss}}/stdDev_{vals}_scale{{npcs}}", vals=["emu_val","ppca_miss_val","admixtools2Norm"]),
+        s_scale2="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/average_run/npop{npop}_nind{nind}/missing{miss}/stdDev_ppca_miss_val_scale{npcs2}",
+        p_scale2="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/average_run/npop{npop}_nind{nind}/missing{miss}/stdDev_emu_val_scale{npcs2}",
+        true="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/avgrun/npop{npop}_nind{nind}/true_val/f2mat15"
+    output:
+        f2out="simfiles/Ne{Ne}/split_times{sp}/npop{npop}_nind{nind}/missing{miss}/plots_{npcs}_{npcs2}/mu{mu}_f2.csv"
+    script:
+        "f2_table.R"
+
+
+rule one_plot:
+    input:
+        f2f="simfiles/Ne{Ne}/split_times{sp}/npop{npop}_nind{nind}/missing{miss}/plots_{npcs}_{npcs2}/mu{mu}_f2.csv",
+        f3f="simfiles/Ne{Ne}/split_times{sp}/npop{npop}_nind{nind}/missing{miss}/plots_{npcs}_{npcs2}/mu{mu}_f3.csv",
+        f4f="simfiles/Ne{Ne}/split_times{sp}/npop{npop}_nind{nind}/missing{miss}/plots_{npcs}_{npcs2}/mu{mu}_f4.csv",
+        true_f2="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/avgrun/npop{npop}_nind{nind}/true_val/f2mat15",
+        ftrue="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/average_run/npop{npop}_nind{nind}/missing{miss}/fstats_avg_true_val"
+    output:
+        plotf="simfiles/Ne{Ne}/split_times{sp}/npop{npop}_nind{nind}/missing{miss}/plots_{npcs}_{npcs2}/mu{mu}_plot_all.png"
+    script:
+        "plot_all.R"
+
+
+rule makeTables:
+    input:
+        alltab=expand("simfiles/Ne{{Ne}}/split_times{{sp}}/mu{{mu}}/run{RID}/npop{{npop}}_nind{{nind}}/missing{{miss}}/{{vals}}/f2mat{{npcs}}", RID=runlist)
+    output:
+        mout="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/average_run/npop{npop}_nind{nind}/missing{miss}/avgAccuracy_{vals}_scale{npcs}",
+        sout="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/average_run/npop{npop}_nind{nind}/missing{miss}/stdDev_{vals}_scale{npcs}",
+    run:
+        ff.make_tables(allf=input.alltab, meanf=output.mout, stdf=output.sout)
+
+rule allTables:
+    input:
+        a=expand("simfiles/Ne1000/split_times1000/mu0.05/average_run/npop10_nind100/missing0.5/avgAccuracy_{vals}_scale{npcs}",vals=["emu_val","ppca_miss_val","admixtools2Norm"], npcs=npc_list1)
+
+rule plotTables:
+    input:
+        flist=expand("simfiles/Ne{{Ne}}/split_times{{sp}}/mu{{mu}}/average_run/npop{{npop}}_nind{{nind}}/avgAccuracy_{vals}_scale{{npcs}}", vals=["PCA1_val","ppca_direct_val","admixtools2Norm"]),
+        fscale2="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/average_run/npop{npop}_nind{nind}/avgAccuracy_ppca_direct_val_scale{npcs2}",
+        pscale2="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/average_run/npop{npop}_nind{nind}/avgAccuracy_PCA1_val_scale{npcs2}",
+        slist=expand("simfiles/Ne{{Ne}}/split_times{{sp}}/mu{{mu}}/average_run/npop{{npop}}_nind{{nind}}/stdDev_{vals}_scale{{npcs}}", vals=["PCA1_val","ppca_direct_val","admixtools2Norm"]),
+        s_scale2="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/average_run/npop{npop}_nind{nind}/stdDev_ppca_direct_val_scale{npcs2}",
+        p_scale2="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/average_run/npop{npop}_nind{nind}/stdDev_PCA1_val_scale{npcs2}",
+        true="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/avgrun/npop{npop}_nind{nind}/true_val/f2mat15"
+    output:
+        f2plot="simfiles/Ne{Ne}/split_times{sp}/npop{npop}_nind{nind}/plots_{npcs}_{npcs2}/mu{mu}_f2_plot_slides.png"
+    script:
+        "plot_f2.R"
+
+rule scale_sensitivity:
+    input:
+        flist=expand("simfiles/Ne{{Ne}}/split_times{{sp}}/mu{{mu}}/average_run/npop{{npop}}_nind{{nind}}/avgAccuracy_{vals}_scale{npcs}", vals=["PCA1_val","pca_val","ppca_direct_val"], npcs=list(range(2,51))),
+        slist=expand("simfiles/Ne{{Ne}}/split_times{{sp}}/mu{{mu}}/average_run/npop{{npop}}_nind{{nind}}/stdDev_{vals}_scale{npcs}", vals=["PCA1_val","pca_val","ppca_direct_val"], npcs=list(range(2,51))),
+        true="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/avgrun/npop{npop}_nind{nind}/true_val/f2mat8",
+    output:
+        f2plot="simfiles/Ne{Ne}/split_times{sp}/npop{npop}_nind{nind}/mu{mu}_f2_plot_scale_test.png"
+    script:
+        "scale_f2.R"
+
+"""
+rule plotTables_cp:
+    input:
+        flist=expand("simfiles/Ne{{Ne}}/split_times{{sp}}/mu{{mu}}/average_run/npop{{npop}}_nind{{nind}}/missing{{miss}}/avgAccuracy_{vals}_scale{{npcs}}", vals=["emu_val","ppca_miss_val","admixtools2Norm"]),
+        fscale2="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/average_run/npop{npop}_nind{nind}/missing{miss}/avgAccuracy_ppca_miss_val_scale{npcs2}",
+        pscale2="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/average_run/npop{npop}_nind{nind}/missing{miss}/avgAccuracy_emu_val_scale{npcs2}",
+        slist=expand("simfiles/Ne{{Ne}}/split_times{{sp}}/mu{{mu}}/average_run/npop{{npop}}_nind{{nind}}/missing{{miss}}/stdDev_{vals}_scale{{npcs}}", vals=["emu_val","ppca_miss_val","admixtools2Norm"]),
+        s_scale2="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/average_run/npop{npop}_nind{nind}/missing{miss}/stdDev_ppca_miss_val_scale{npcs2}",
+        p_scale2="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/average_run/npop{npop}_nind{nind}/missing{miss}/stdDev_emu_val_scale{npcs2}",
+        true=folder+"simfiles/Ne{Ne}/split_times{sp}/mu{mu}/avgrun/npop{npop}_nind{nind}/true_val/f2mat{npcs}"
+    output:
+        f2plot="simfiles/Ne{Ne}/split_times{sp}/npop{npop}_nind{nind}/missing{miss}/plots_{npcs}_{npcs2}/mu{mu}_f2_plot_slides.png"
+    script:
+        "plot_f2.R"
+"""
+
+
+
+
+
+
+rule all:
+    input:
+        f2=expand("simfiles/Ne{Ne}/split_times{sp}/npop{npop}_nind{nind}/plots_{npcs}_{npcs2}/mu{mu}_f2_plot.png", npop=10,nind=100,mu=[0,0.01,0.05], npcs=15, npcs2=10, Ne=[5000], sp=[5000,1000]),
+        f4=expand("simfiles/AvgFolder/Ne{Ne}/split_times{sp}/npop{npop}_nind{nind}/plots_{npcs}/hypothesis_test_comparison.png",npop=10,nind=100,npcs=[15,10], Ne=[1000], sp=[100,1000]),
+
+
+
+rule scale_sensitivity1:
+    input:
+        flist=expand("simfiles/Ne1000/split_times1000/mu0/average_run/npop10_nind100/avgAccuracy_{vals}_scale{npcs}", vals=["PCA1_val","pca_val","ppca_direct_val"], npcs=list(range(8,51))),
+        slist=expand("simfiles/Ne1000/split_times1000/mu0/average_run/npop10_nind100/stdDev_{vals}_scale{npcs}", vals=["PCA1_val","pca_val","ppca_direct_val"], npcs=list(range(8,51))),
+        true=expand("simfiles/Ne1000/split_times1000/mu0/avgrun/npop10_nind100/true_val/f2mat{npcs}",npcs=list(range(8,21)))
+
+
+
+rule main_fig_scale_sensitivity:
+    input:
+        flist=expand("simfiles/Ne{{Ne}}/split_times{{sp}}/mu{{mu}}/average_run/npop{{npop}}_nind{{nind}}/missing{{miss}}/avgAccuracy_{vals}_scale{npcs}", vals=["emu_val","ppca_miss_val"], npcs=npc_list1),
+        slist=expand("simfiles/Ne{{Ne}}/split_times{{sp}}/mu{{mu}}/average_run/npop{{npop}}_nind{{nind}}/missing{{miss}}/stdDev_{vals}_scale{npcs}", vals=["emu_val","ppca_miss_val"], npcs=npc_list1),
+        nfile_avg="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/average_run/npop{npop}_nind{nind}/missing{miss}/avgAccuracy_noisy_val_scale8",
+        true="simfiles/Ne{Ne}/split_times{sp}/mu{mu}/avgrun/npop{npop}_nind{nind}/true_val/f2mat8",
+    output:
+        f2file="simfiles/Ne{Ne}/split_times{sp}/npop{npop}_nind{nind}/missing{miss}/mu{mu}_f2_fig_all.csv"
+    script:
+        "fig_main_all_PC.R"
+
+
+"""
+xxx=t(x$pcs[,1:5])
+Y=xxx %*% t(xxx)
+X=matrix(nrow = 2, ncol = 2)
+
+X=matrix(c(Y[1,1]+Y[2,2]-2*Y[1,2] , Y[1,3]+Y[2,4]-Y[1,4]-Y[2,3] , Y[1,3]+Y[2,4]-Y[1,4]-Y[2,3] , Y[3,3]+Y[4,4]-2*Y[3,4]),nrow = 2, ncol = 2)
+ll=ncol(d2)*log10((X[1,1]*X[2,2]+X[1,2]^2)/X[1,1]*X[2,2])
+"""

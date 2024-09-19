@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="287.92343mm"
+   height="166.26117mm"
+   viewBox="0 0 287.92343 166.26117"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0, 2021-09-20)"
+   sodipodi:docname="pca_fig.svg"
+   inkscape:export-filename="/mnt/diversity/divyaratan_popli/fstats/ppca_fstatistics/plots/pca_fig.png"
+   inkscape:export-xdpi="600"
+   inkscape:export-ydpi="600"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.82574016"
+     inkscape:cx="610.3615"
+     inkscape:cy="935.52432"
+     inkscape:window-width="1920"
+     inkscape:window-height="997"
+     inkscape:window-x="0"
+     inkscape:window-y="28"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible"
+       id="Arrow1Sstart"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Sstart"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.2,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path16548" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lstart"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.8,0,0,0.8,10,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path16536" />
+    </marker>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1144">
+      <rect
+         style="color:#000000;overflow:visible;fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.364927;stroke-dasharray:0, 4.01421"
+         id="rect1146"
+         width="214.32632"
+         height="101.36753"
+         x="-8.8463964"
+         y="217.06345" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1252">
+      <rect
+         style="color:#000000;overflow:visible;fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.372668;stroke-dasharray:0, 4.09935"
+         id="rect1254"
+         width="141.11263"
+         height="83.954254"
+         x="1.9625908"
+         y="40.596813" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1464">
+      <rect
+         style="color:#000000;overflow:visible;fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.372668;stroke-dasharray:0, 4.09935"
+         id="rect1466"
+         width="146.6398"
+         height="77.848595"
+         x="2.0512252"
+         y="142.23541" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1759">
+      <rect
+         style="color:#000000;overflow:visible;fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.372668;stroke-dasharray:0, 4.09935"
+         id="rect1761"
+         width="55.920124"
+         height="67.112808"
+         x="210.68553"
+         y="133.06863" />
+    </clipPath>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-1.7915713,-40.596813)">
+    <image
+       width="203.2"
+       height="127"
+       preserveAspectRatio="none"
+       xlink:href="neandertal_ppca.png"
+       id="image1008"
+       x="3.9447439"
+       y="117.51302"
+       clip-path="url(#clipPath1464)"
+       transform="translate(141.02399,-92.357942)" />
+    <image
+       width="203.2"
+       height="127"
+       preserveAspectRatio="none"
+       xlink:href="neandertal_pca_smartpca.png"
+       id="image1020"
+       x="1.1597031"
+       y="20.987032"
+       clip-path="url(#clipPath1252)" />
+    <path
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#444444;stroke-width:0.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.3, 0.6;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#Arrow1Sstart);color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="M 277.71547,58.332254 273.0563,107.19283"
+       id="path15643-2"
+       sodipodi:nodetypes="cc" />
+    <image
+       width="254"
+       height="76.199997"
+       preserveAspectRatio="none"
+       xlink:href="f3_neandertal.png"
+       id="image1032"
+       x="2.0474734"
+       y="229.85089"
+       clip-path="url(#clipPath1144)"
+       transform="translate(1.8448213,-99.192911)" />
+    <image
+       width="203.2"
+       height="127"
+       preserveAspectRatio="none"
+       xlink:href="neandertal_ppca.png"
+       id="image1635"
+       x="65.937103"
+       y="104.42017"
+       clip-path="url(#clipPath1759)"
+       transform="translate(20.992695,-3.755061)" />
+    <text
+       xml:space="preserve"
+       style="color:#000000;font-size:8.46666px;line-height:125%;font-family:ubuntu;-inkscape-font-specification:ubuntu;text-decoration:none;text-decoration-line:none;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;overflow:visible;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.559002;stroke-dasharray:0, 6.14902"
+       x="2.0033391"
+       y="53.968555"
+       id="text4609"><tspan
+         sodipodi:role="line"
+         id="tspan4607"
+         style="font-size:8.46666px;fill:#000000;fill-opacity:1;stroke-width:0.559004"
+         x="2.0033391"
+         y="53.968555">A</tspan></text>
+    <text
+       xml:space="preserve"
+       style="color:#000000;font-size:8.46666px;line-height:125%;font-family:ubuntu;-inkscape-font-specification:ubuntu;text-decoration:none;text-decoration-line:none;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;overflow:visible;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.559002;stroke-dasharray:0, 6.14902"
+       x="146.44466"
+       y="53.969967"
+       id="text4609-3"><tspan
+         sodipodi:role="line"
+         id="tspan4607-6"
+         style="font-size:8.46666px;fill:#000000;fill-opacity:1;stroke-width:0.559004"
+         x="146.44466"
+         y="53.969967">B</tspan></text>
+    <text
+       xml:space="preserve"
+       style="color:#000000;font-size:8.46666px;line-height:125%;font-family:ubuntu;-inkscape-font-specification:ubuntu;text-decoration:none;text-decoration-line:none;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;overflow:visible;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.559002;stroke-dasharray:0, 6.14902"
+       x="1.5800061"
+       y="138.76797"
+       id="text4609-3-7"><tspan
+         sodipodi:role="line"
+         id="tspan4607-6-5"
+         style="font-size:8.46666px;fill:#000000;fill-opacity:1;stroke-width:0.559004"
+         x="1.5800061"
+         y="138.76797">C</tspan></text>
+    <text
+       xml:space="preserve"
+       style="color:#000000;font-size:8.46666px;line-height:125%;font-family:ubuntu;-inkscape-font-specification:ubuntu;text-decoration:none;text-decoration-line:none;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;overflow:visible;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.559002;stroke-dasharray:0, 6.14902"
+       x="218.62462"
+       y="138.76797"
+       id="text4609-3-7-3"><tspan
+         sodipodi:role="line"
+         id="tspan4607-6-5-5"
+         style="font-size:8.46666px;fill:#000000;fill-opacity:1;stroke-width:0.559004"
+         x="218.62462"
+         y="138.76797">D</tspan></text>
+  </g>
+</svg>
