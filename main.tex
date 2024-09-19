@@ -80,7 +80,7 @@ In particular for humans, there has been a long-standing debate on how we concep
 
 
 \subsection{Overview of methods to study admixture}
-There is a large array of approaches and methods available to make inferences about population structure \citep{sch raiber_methods_2015}, aiming at different time scales, making different modelling assumptions or treating data differently. 
+There is a large array of approaches and methods available to make inferences about population structure \citep{schraiber_methods_2015}, aiming at different time scales, making different modelling assumptions or treating data differently. 
 One wide class of methods are global ancestry methods. They summarize the entirety of the genome into a small number of summary statistics, with the idea that different genomic loci are (pseudo-) independent replicates of the historical process \citep{pritchard_inference_2000, gopalan_scaling_2016, patterson_ancient_2012,alexander_fast_2009, tang_estimation_2005}. Global ancestry methods stand in contrast to local ancestry methods, that use an ancestral recombination graph or an approximation thereof, to infer the detailed ancestry of each locus  \citep{lawson_inference_2012, hellenthal_genetic_2014, speidel_method_2019, kelleher_inferring_2019}. Global ancestry methods are widely used because they tend to be much simpler and easier to interpret than local ancestry methods, and are sufficient for many applications \citep{pritchard_inference_2000, patterson_population_2006}.
 
 For large datasets with dozens of individuals spanning a wide range of sampling locations, we can further classify global methods into joint analyses that use data from all individuals in a multivariate framework, such as Principal Component Analysis (PCA) \citep{cavalli-sforza_analysis_1975, patterson_population_2006, novembre_genes_2008}, structure-like methods \citep{pritchard_inference_2000, alexander_fast_2009}, and summary-statistic-based approaches relying on statistics that include two or a small number of populations (e.g. $F_{ST}$-based or site-frequency-spectrum based methods), and use large numbers of these summaries to build more complex models \citep{excoffier_fastsimcoal_2011, kamm_efficiently_2020, gutenkunst_inferring_2009}. 
@@ -377,7 +377,7 @@ We implement PPCA using maximum-likelihood approach following \cite{tipping_prob
     \item Mean center data $\MX_c = \MX - \mu$.
     \item Set missing values to 0.
     \item Get covariance matrix $\mathbf{C}$ = $\frac{1}{S} \MX_c\MX_c^T$
-    \item Perform eigen value decomposition of $\mathbf{C}$, $\mathbf{C} = \mathbf{VEV}^T$.
+    \item Perform eigen value decomposition of $\mathbf{C}$, $\mathbf{C} = \mathbf{V}\Lambda\mathbf{V}^T$.
     \item Calculate the MLE of the Gaussian noise parameter $\Psi = \frac{1}{M-q} \sum_{j=M-q}^ M \lambda_j$ as the average of square of the $M-q$ smallest singular values.
     \item Obtain the MLE of the $q^{th}$ eigenvalue as $\lambda_q - \Psi$.
     \item Calculate the linear mapping matrix $\BW = \mathbf{V} (\Lambda - \Psi\BI)^{1/2}$.
@@ -515,7 +515,7 @@ Hence the matrix $\mathbf{G}$ can be used to estimate unbiased $F_2$-statistics.
 
 \subsection{Availability of data and materials}
 
-An open-source implementation of our snakemake pipeline to estimate PCA and $F$-statistics is available along with a toy example dataset, and the scripts to generate our simulations are available on GitHub [??]. We have deposited the version of the software used in the manuscript, along with the above mentioned files on Zenodo [??]. The analyzed Neandertal dataset was generated in previous studies, and is available in European Nucleotide Archive [??, ??].
+An open-source implementation of our snakemake pipeline to estimate PCA and $F$-statistics is available along with a toy example dataset, and the scripts to generate our simulations are available on GitHub \cite{popli_httpsgithubcomdivyaratanpoplipca_paper_nodate}. The analyzed Neandertal dataset was generated in previous studies, and is available in European Nucleotide Archive \cite{hajdinjak_reconstructing_nodate}.
 
 
 \bibliographystyle{evo3}
