@@ -1,0 +1,32 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 120
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count    min threads    max threads
+--------------  -------  -------------  -------------
+runAdmixtools2        1              1              1
+total                 1              1              1
+
+Select jobs to execute...
+
+[Wed Oct  9 11:36:54 2024]
+rule runAdmixtools2:
+    input: toy_example/all_ind.geno, toy_example/all_ind.ind
+    output: to_delete/admixtools2/f2mat_mean.csv, to_delete/admixtools2/f2mat_std.csv
+    jobid: 0
+    resources: tmpdir=/tmp
+
+[Wed Oct  9 11:36:57 2024]
+Error in rule runAdmixtools2:
+    jobid: 0
+    output: to_delete/admixtools2/f2mat_mean.csv, to_delete/admixtools2/f2mat_std.csv
+
+RuleException:
+CalledProcessError in line 52 of /mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/Snakefile:
+Command 'set -euo pipefail;  Rscript --vanilla /mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/.snakemake/scripts/tmpsd7be2w1.run_admixtools2.R' returned non-zero exit status 1.
+  File "/mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/Snakefile", line 52, in __rule_runAdmixtools2
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/.snakemake/log/2024-10-09T113653.139296.snakemake.log

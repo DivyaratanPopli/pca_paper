@@ -1,0 +1,24 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 40
+Rules claiming more threads will be scaled down.
+Job stats:
+job                count    min threads    max threads
+---------------  -------  -------------  -------------
+ppcaMethods_sub        1              1              1
+total                  1              1              1
+
+Select jobs to execute...
+
+[Tue Oct  8 15:04:13 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter1/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 0
+    wildcards: f=1, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:04:32 2024]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: /mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/.snakemake/log/2024-10-08T150412.078186.snakemake.log

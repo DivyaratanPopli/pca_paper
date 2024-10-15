@@ -1,0 +1,1605 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 40
+Rules claiming more threads will be scaled down.
+Job stats:
+job                count    min threads    max threads
+---------------  -------  -------------  -------------
+all_ppca               1              1              1
+ppcaMethods_sub     1457              1              1
+total               1458              1              1
+
+Select jobs to execute...
+
+[Tue Oct  8 15:06:37 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter284/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter284/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter284/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter284/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter284/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 332
+    wildcards: f=284, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:06:37 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter659/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter659/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter659/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter659/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter659/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 707
+    wildcards: f=659, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:37 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter292/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter292/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter292/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter292/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter292/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 340
+    wildcards: f=292, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:37 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter667/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter667/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter667/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter667/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter667/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 715
+    wildcards: f=667, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:38 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter344/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter344/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter344/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter344/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter344/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 392
+    wildcards: f=344, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:38 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter719/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter719/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter719/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter719/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter719/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 767
+    wildcards: f=719, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:38 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter1213/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1213/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1213/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1213/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1213/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 1261
+    wildcards: f=1213, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:38 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter285/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter285/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter285/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter285/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter285/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 333
+    wildcards: f=285, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:38 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter660/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter660/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter660/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter660/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter660/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 708
+    wildcards: f=660, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:38 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter293/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter293/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter293/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter293/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter293/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 341
+    wildcards: f=293, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:38 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter668/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter668/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter668/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter668/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter668/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 716
+    wildcards: f=668, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:38 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter345/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter345/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter345/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter345/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter345/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 393
+    wildcards: f=345, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:39 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter720/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter720/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter720/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter720/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter720/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 768
+    wildcards: f=720, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:39 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter1214/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1214/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1214/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1214/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1214/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 1262
+    wildcards: f=1214, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:39 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter286/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter286/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter286/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter286/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter286/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 334
+    wildcards: f=286, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:39 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter661/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter661/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter661/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter661/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter661/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 709
+    wildcards: f=661, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:39 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter294/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter294/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter294/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter294/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter294/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 342
+    wildcards: f=294, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:39 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter669/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter669/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter669/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter669/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter669/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 717
+    wildcards: f=669, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:39 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter346/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter346/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter346/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter346/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter346/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 394
+    wildcards: f=346, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:39 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter721/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter721/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter721/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter721/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter721/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 769
+    wildcards: f=721, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:39 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter1215/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1215/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1215/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1215/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1215/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 1263
+    wildcards: f=1215, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:39 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter287/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter287/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter287/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter287/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter287/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 335
+    wildcards: f=287, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:39 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter662/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter662/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter662/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter662/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter662/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 710
+    wildcards: f=662, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:39 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter295/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter295/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter295/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter295/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter295/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 343
+    wildcards: f=295, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:39 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter670/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter670/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter670/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter670/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter670/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 718
+    wildcards: f=670, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:39 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter347/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter347/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter347/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter347/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter347/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 395
+    wildcards: f=347, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:39 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter288/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter288/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter288/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter288/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter288/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 336
+    wildcards: f=288, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:39 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter663/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter663/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter663/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter663/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter663/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 711
+    wildcards: f=663, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:39 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter296/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter296/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter296/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter296/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter296/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 344
+    wildcards: f=296, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:40 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter671/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter671/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter671/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter671/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter671/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 719
+    wildcards: f=671, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:40 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter289/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter289/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter289/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter289/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter289/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 337
+    wildcards: f=289, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:40 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter664/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter664/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter664/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter664/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter664/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 712
+    wildcards: f=664, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:40 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter672/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter672/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter672/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter672/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter672/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 720
+    wildcards: f=672, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:40 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter297/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter297/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter297/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter297/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter297/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 345
+    wildcards: f=297, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:40 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter290/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter290/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter290/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter290/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter290/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 338
+    wildcards: f=290, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:40 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter665/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter665/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter665/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter665/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter665/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 713
+    wildcards: f=665, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:40 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter673/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter673/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter673/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter673/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter673/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 721
+    wildcards: f=673, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:40 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter298/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter298/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter298/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter298/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter298/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 346
+    wildcards: f=298, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:40 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter291/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter291/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter291/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter291/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter291/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 339
+    wildcards: f=291, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:06:40 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter666/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter666/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter666/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter666/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter666/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 714
+    wildcards: f=666, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:06:56 2024]
+Finished job 332.
+1 of 1458 steps (0.1%) done
+Select jobs to execute...
+
+[Tue Oct  8 15:06:56 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter722/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter722/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter722/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter722/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter722/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 770
+    wildcards: f=722, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:06:57 2024]
+Finished job 392.
+2 of 1458 steps (0.1%) done
+Select jobs to execute...
+
+[Tue Oct  8 15:06:57 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter1216/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1216/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1216/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1216/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1216/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 1264
+    wildcards: f=1216, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:06:59 2024]
+Finished job 708.
+3 of 1458 steps (0.2%) done
+Select jobs to execute...
+
+[Tue Oct  8 15:06:59 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter348/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter348/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter348/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter348/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter348/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 396
+    wildcards: f=348, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:06:59 2024]
+Finished job 340.
+4 of 1458 steps (0.3%) done
+[Tue Oct  8 15:06:59 2024]
+Finished job 768.
+5 of 1458 steps (0.3%) done
+Select jobs to execute...
+
+[Tue Oct  8 15:06:59 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter723/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter723/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter723/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter723/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter723/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 771
+    wildcards: f=723, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:00 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter1217/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1217/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1217/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1217/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1217/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 1265
+    wildcards: f=1217, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:02 2024]
+Finished job 715.
+6 of 1458 steps (0.4%) done
+[Tue Oct  8 15:07:04 2024]
+Finished job 1263.
+7 of 1458 steps (0.5%) done
+[Tue Oct  8 15:07:04 2024]
+Finished job 333.
+8 of 1458 steps (1%) done
+Select jobs to execute...
+
+[Tue Oct  8 15:07:04 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter724/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter724/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter724/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter724/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter724/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 772
+    wildcards: f=724, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:04 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter349/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter349/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter349/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter349/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter349/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 397
+    wildcards: f=349, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:05 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter1218/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1218/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1218/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1218/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1218/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 1266
+    wildcards: f=1218, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:05 2024]
+Finished job 767.
+9 of 1458 steps (1%) done
+[Tue Oct  8 15:07:06 2024]
+Finished job 1261.
+10 of 1458 steps (1%) done
+[Tue Oct  8 15:07:06 2024]
+Finished job 707.
+11 of 1458 steps (1%) done
+[Tue Oct  8 15:07:07 2024]
+Finished job 336.
+12 of 1458 steps (1%) done
+[Tue Oct  8 15:07:07 2024]
+Finished job 1262.
+13 of 1458 steps (1%) done
+[Tue Oct  8 15:07:07 2024]
+Finished job 720.
+14 of 1458 steps (1%) done
+[Tue Oct  8 15:07:07 2024]
+Finished job 337.
+15 of 1458 steps (1%) done
+[Tue Oct  8 15:07:07 2024]
+Finished job 393.
+16 of 1458 steps (1%) done
+[Tue Oct  8 15:07:07 2024]
+Finished job 343.
+17 of 1458 steps (1%) done
+[Tue Oct  8 15:07:07 2024]
+Finished job 717.
+18 of 1458 steps (1%) done
+[Tue Oct  8 15:07:07 2024]
+Finished job 345.
+19 of 1458 steps (1%) done
+[Tue Oct  8 15:07:07 2024]
+Finished job 342.
+20 of 1458 steps (1%) done
+[Tue Oct  8 15:07:07 2024]
+Finished job 711.
+21 of 1458 steps (1%) done
+[Tue Oct  8 15:07:07 2024]
+Finished job 721.
+22 of 1458 steps (2%) done
+[Tue Oct  8 15:07:07 2024]
+Finished job 335.
+23 of 1458 steps (2%) done
+[Tue Oct  8 15:07:07 2024]
+Finished job 716.
+24 of 1458 steps (2%) done
+[Tue Oct  8 15:07:07 2024]
+Finished job 710.
+25 of 1458 steps (2%) done
+[Tue Oct  8 15:07:07 2024]
+Finished job 719.
+26 of 1458 steps (2%) done
+[Tue Oct  8 15:07:07 2024]
+Finished job 712.
+27 of 1458 steps (2%) done
+[Tue Oct  8 15:07:07 2024]
+Finished job 709.
+28 of 1458 steps (2%) done
+[Tue Oct  8 15:07:07 2024]
+Finished job 339.
+29 of 1458 steps (2%) done
+[Tue Oct  8 15:07:07 2024]
+Finished job 338.
+30 of 1458 steps (2%) done
+Select jobs to execute...
+
+[Tue Oct  8 15:07:07 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter1221/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1221/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1221/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1221/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1221/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 1269
+    wildcards: f=1221, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:07 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter352/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter352/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter352/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter352/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter352/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 400
+    wildcards: f=352, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:07 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter727/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter727/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter727/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter727/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter727/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 775
+    wildcards: f=727, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:07 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter1222/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1222/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1222/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1222/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1222/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 1270
+    wildcards: f=1222, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:08 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter353/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter353/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter353/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter353/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter353/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 401
+    wildcards: f=353, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:08 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter728/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter728/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter728/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter728/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter728/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 776
+    wildcards: f=728, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:08 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter1223/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1223/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1223/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1223/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1223/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 1271
+    wildcards: f=1223, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:08 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter354/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter354/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter354/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter354/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter354/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 402
+    wildcards: f=354, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:08 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter729/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter729/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter729/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter729/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter729/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 777
+    wildcards: f=729, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:08 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter1224/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1224/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1224/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1224/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1224/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 1272
+    wildcards: f=1224, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:08 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter355/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter355/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter355/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter355/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter355/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 403
+    wildcards: f=355, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:08 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter730/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter730/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter730/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter730/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter730/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 778
+    wildcards: f=730, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:08 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter356/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter356/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter356/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter356/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter356/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 404
+    wildcards: f=356, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:08 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter731/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter731/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter731/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter731/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter731/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 779
+    wildcards: f=731, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:08 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter1225/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1225/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1225/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1225/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1225/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 1273
+    wildcards: f=1225, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:09 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter357/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter357/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter357/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter357/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter357/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 405
+    wildcards: f=357, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:09 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter1219/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1219/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1219/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1219/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1219/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 1267
+    wildcards: f=1219, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:09 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter350/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter350/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter350/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter350/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter350/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 398
+    wildcards: f=350, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:09 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter725/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter725/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter725/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter725/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter725/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 773
+    wildcards: f=725, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:09 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter1220/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1220/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1220/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1220/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1220/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 1268
+    wildcards: f=1220, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:09 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter351/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter351/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter351/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter351/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter351/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 399
+    wildcards: f=351, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:09 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter726/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter726/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter726/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter726/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter726/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 774
+    wildcards: f=726, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:09 2024]
+Finished job 714.
+31 of 1458 steps (2%) done
+[Tue Oct  8 15:07:09 2024]
+Finished job 718.
+32 of 1458 steps (2%) done
+[Tue Oct  8 15:07:09 2024]
+Finished job 344.
+33 of 1458 steps (2%) done
+[Tue Oct  8 15:07:09 2024]
+Finished job 394.
+34 of 1458 steps (2%) done
+[Tue Oct  8 15:07:09 2024]
+Finished job 769.
+35 of 1458 steps (2%) done
+[Tue Oct  8 15:07:09 2024]
+Finished job 346.
+36 of 1458 steps (2%) done
+[Tue Oct  8 15:07:09 2024]
+Finished job 334.
+37 of 1458 steps (3%) done
+[Tue Oct  8 15:07:09 2024]
+Finished job 713.
+38 of 1458 steps (3%) done
+[Tue Oct  8 15:07:09 2024]
+Finished job 341.
+39 of 1458 steps (3%) done
+[Tue Oct  8 15:07:09 2024]
+Finished job 395.
+40 of 1458 steps (3%) done
+Select jobs to execute...
+
+[Tue Oct  8 15:07:09 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter1227/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1227/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1227/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1227/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1227/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 1275
+    wildcards: f=1227, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:09 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter733/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter733/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter733/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter733/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter733/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 781
+    wildcards: f=733, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:09 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter358/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter358/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter358/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter358/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter358/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 406
+    wildcards: f=358, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:09 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter122/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter122/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter122/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter122/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter122/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 170
+    wildcards: f=122, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:09 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter124/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter124/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter124/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter124/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter124/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 172
+    wildcards: f=124, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:09 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter126/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter126/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter126/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter126/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter126/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 174
+    wildcards: f=126, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:09 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter732/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter732/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter732/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter732/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter732/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 780
+    wildcards: f=732, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:10 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter1226/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1226/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1226/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1226/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1226/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 1274
+    wildcards: f=1226, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:10 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter123/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter123/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter123/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter123/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter123/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 171
+    wildcards: f=123, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:10 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter125/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter125/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter125/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter125/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter125/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 173
+    wildcards: f=125, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+Select jobs to execute...
+[Tue Oct  8 15:07:16 2024]
+Finished job 770.
+41 of 1458 steps (3%) done
+
+[Tue Oct  8 15:07:16 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter127/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter127/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter127/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter127/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter127/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 175
+    wildcards: f=127, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:17 2024]
+Finished job 1264.
+42 of 1458 steps (3%) done
+Select jobs to execute...
+
+[Tue Oct  8 15:07:17 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter128/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter128/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter128/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter128/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter128/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 176
+    wildcards: f=128, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:18 2024]
+Finished job 396.
+43 of 1458 steps (3%) done
+Select jobs to execute...
+
+[Tue Oct  8 15:07:18 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter129/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter129/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter129/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter129/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter129/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 177
+    wildcards: f=129, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:19 2024]
+Finished job 771.
+44 of 1458 steps (3%) done
+Select jobs to execute...
+
+[Tue Oct  8 15:07:19 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter130/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter130/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter130/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter130/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter130/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 178
+    wildcards: f=130, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:19 2024]
+Finished job 1265.
+45 of 1458 steps (3%) done
+Select jobs to execute...
+
+[Tue Oct  8 15:07:19 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter131/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter131/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter131/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter131/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter131/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 179
+    wildcards: f=131, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:25 2024]
+Finished job 772.
+46 of 1458 steps (3%) done
+Select jobs to execute...
+
+[Tue Oct  8 15:07:25 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter132/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter132/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter132/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter132/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter132/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 180
+    wildcards: f=132, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:25 2024]
+Finished job 1266.
+47 of 1458 steps (3%) done
+Select jobs to execute...
+
+[Tue Oct  8 15:07:25 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter133/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter133/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter133/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter133/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter133/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 181
+    wildcards: f=133, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:25 2024]
+Finished job 397.
+48 of 1458 steps (3%) done
+Select jobs to execute...
+
+[Tue Oct  8 15:07:25 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter134/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter134/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter134/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter134/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter134/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 182
+    wildcards: f=134, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:27 2024]
+Finished job 1272.
+49 of 1458 steps (3%) done
+Select jobs to execute...
+
+[Tue Oct  8 15:07:27 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter135/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter135/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter135/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter135/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter135/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 183
+    wildcards: f=135, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:28 2024]
+Finished job 778.
+50 of 1458 steps (3%) done
+Select jobs to execute...
+
+[Tue Oct  8 15:07:28 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter136/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter136/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter136/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter136/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter136/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 184
+    wildcards: f=136, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:31 2024]
+Finished job 1273.
+51 of 1458 steps (3%) done
+[Tue Oct  8 15:07:32 2024]
+Finished job 402.
+52 of 1458 steps (4%) done
+[Tue Oct  8 15:07:32 2024]
+Finished job 403.
+53 of 1458 steps (4%) done
+Select jobs to execute...
+
+[Tue Oct  8 15:07:32 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter839/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter839/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter839/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter839/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter839/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 887
+    wildcards: f=839, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:32 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter1273/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1273/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1273/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1273/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1273/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 1321
+    wildcards: f=1273, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:33 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter404/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter404/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter404/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter404/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter404/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 452
+    wildcards: f=404, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:33 2024]
+Finished job 1269.
+54 of 1458 steps (4%) done
+[Tue Oct  8 15:07:33 2024]
+Finished job 404.
+55 of 1458 steps (4%) done
+[Tue Oct  8 15:07:33 2024]
+Finished job 775.
+56 of 1458 steps (4%) done
+[Tue Oct  8 15:07:33 2024]
+Finished job 1270.
+57 of 1458 steps (4%) done
+[Tue Oct  8 15:07:33 2024]
+Finished job 400.
+58 of 1458 steps (4%) done
+[Tue Oct  8 15:07:33 2024]
+Finished job 405.
+59 of 1458 steps (4%) done
+[Tue Oct  8 15:07:33 2024]
+Finished job 776.
+60 of 1458 steps (4%) done
+[Tue Oct  8 15:07:33 2024]
+Finished job 401.
+61 of 1458 steps (4%) done
+[Tue Oct  8 15:07:34 2024]
+Finished job 1267.
+62 of 1458 steps (4%) done
+[Tue Oct  8 15:07:34 2024]
+Finished job 773.
+63 of 1458 steps (4%) done
+[Tue Oct  8 15:07:34 2024]
+Finished job 1271.
+64 of 1458 steps (4%) done
+[Tue Oct  8 15:07:34 2024]
+Finished job 779.
+65 of 1458 steps (4%) done
+[Tue Oct  8 15:07:34 2024]
+Finished job 777.
+66 of 1458 steps (5%) done
+[Tue Oct  8 15:07:34 2024]
+Finished job 774.
+67 of 1458 steps (5%) done
+[Tue Oct  8 15:07:34 2024]
+Finished job 398.
+68 of 1458 steps (5%) done
+Select jobs to execute...
+
+[Tue Oct  8 15:07:34 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter406/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter406/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter406/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter406/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter406/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 454
+    wildcards: f=406, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:34 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter841/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter841/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter841/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter841/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter841/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 889
+    wildcards: f=841, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:34 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter1275/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1275/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1275/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1275/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1275/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 1323
+    wildcards: f=1275, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:34 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter408/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter408/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter408/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter408/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter408/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 456
+    wildcards: f=408, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:34 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter843/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter843/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter843/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter843/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter843/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 891
+    wildcards: f=843, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:34 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter1277/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1277/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1277/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1277/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1277/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 1325
+    wildcards: f=1277, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:34 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter840/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter840/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter840/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter840/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter840/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 888
+    wildcards: f=840, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:34 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter1274/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1274/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1274/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1274/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1274/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 1322
+    wildcards: f=1274, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:34 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter405/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter405/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter405/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter405/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter405/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 453
+    wildcards: f=405, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:34 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter407/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter407/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter407/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter407/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter407/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 455
+    wildcards: f=407, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:34 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter842/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter842/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter842/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter842/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter842/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 890
+    wildcards: f=842, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:34 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter1276/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1276/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1276/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1276/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1276/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 1324
+    wildcards: f=1276, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:34 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter409/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter409/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter409/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter409/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter409/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 457
+    wildcards: f=409, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:34 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter844/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter844/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter844/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter844/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter844/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 892
+    wildcards: f=844, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:34 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter1278/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1278/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1278/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1278/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1278/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 1326
+    wildcards: f=1278, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:34 2024]
+Finished job 1275.
+69 of 1458 steps (5%) done
+[Tue Oct  8 15:07:34 2024]
+Finished job 173.
+70 of 1458 steps (5%) done
+[Tue Oct  8 15:07:35 2024]
+Finished job 172.
+71 of 1458 steps (5%) done
+[Tue Oct  8 15:07:35 2024]
+Finished job 781.
+72 of 1458 steps (5%) done
+[Tue Oct  8 15:07:35 2024]
+Finished job 399.
+73 of 1458 steps (5%) done
+[Tue Oct  8 15:07:35 2024]
+Finished job 406.
+74 of 1458 steps (5%) done
+[Tue Oct  8 15:07:35 2024]
+Finished job 171.
+75 of 1458 steps (5%) done
+[Tue Oct  8 15:07:35 2024]
+Finished job 1268.
+76 of 1458 steps (5%) done
+[Tue Oct  8 15:07:35 2024]
+Finished job 174.
+77 of 1458 steps (5%) done
+[Tue Oct  8 15:07:35 2024]
+Finished job 170.
+78 of 1458 steps (5%) done
+[Tue Oct  8 15:07:35 2024]
+Finished job 1274.
+79 of 1458 steps (5%) done
+[Tue Oct  8 15:07:35 2024]
+Finished job 780.
+80 of 1458 steps (5%) done
+Select jobs to execute...
+
+[Tue Oct  8 15:07:35 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter1279/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1279/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1279/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1279/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1279/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 1327
+    wildcards: f=1279, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:35 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter410/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter410/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter410/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter410/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter410/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 458
+    wildcards: f=410, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:35 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter845/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter845/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter845/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter845/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter845/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 893
+    wildcards: f=845, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:35 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter412/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter412/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter412/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter412/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter412/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 460
+    wildcards: f=412, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:35 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter847/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter847/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter847/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter847/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter847/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 895
+    wildcards: f=847, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:35 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter1281/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1281/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1281/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1281/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1281/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 1329
+    wildcards: f=1281, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:35 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter846/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter846/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter846/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter846/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter846/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 894
+    wildcards: f=846, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:35 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter411/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter411/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter411/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter411/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter411/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 459
+    wildcards: f=411, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:35 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter1280/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1280/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1280/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1280/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1280/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 1328
+    wildcards: f=1280, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:35 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter413/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter413/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter413/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter413/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter413/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 461
+    wildcards: f=413, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:35 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter848/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter848/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter848/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter848/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter848/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 896
+    wildcards: f=848, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct  8 15:07:36 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter1282/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1282/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1282/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1282/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1282/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 1330
+    wildcards: f=1282, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:36 2024]
+Finished job 175.
+81 of 1458 steps (6%) done
+Select jobs to execute...
+
+[Tue Oct  8 15:07:36 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter849/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter849/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter849/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter849/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter849/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 897
+    wildcards: f=849, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+Select jobs to execute...
+[Tue Oct  8 15:07:36 2024]
+Finished job 176.
+82 of 1458 steps (6%) done
+
+[Tue Oct  8 15:07:36 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter1283/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1283/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1283/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1283/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1283/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 1331
+    wildcards: f=1283, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+Select jobs to execute...
+[Tue Oct  8 15:07:37 2024]
+Finished job 177.
+83 of 1458 steps (6%) done
+
+[Tue Oct  8 15:07:37 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter414/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter414/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter414/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter414/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter414/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 462
+    wildcards: f=414, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:39 2024]
+Finished job 178.
+84 of 1458 steps (6%) done
+Select jobs to execute...
+
+[Tue Oct  8 15:07:39 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter850/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter850/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter850/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter850/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter850/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 898
+    wildcards: f=850, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:39 2024]
+Finished job 179.
+85 of 1458 steps (6%) done
+Select jobs to execute...
+
+[Tue Oct  8 15:07:39 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter1284/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1284/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1284/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1284/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1284/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 1332
+    wildcards: f=1284, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:44 2024]
+Finished job 181.
+86 of 1458 steps (6%) done
+Select jobs to execute...
+
+[Tue Oct  8 15:07:44 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter415/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter415/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter415/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter415/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter415/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 463
+    wildcards: f=415, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:44 2024]
+Finished job 180.
+87 of 1458 steps (6%) done
+Select jobs to execute...
+
+[Tue Oct  8 15:07:44 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter1285/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1285/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1285/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1285/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1285/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 1333
+    wildcards: f=1285, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:44 2024]
+Finished job 182.
+88 of 1458 steps (6%) done
+Select jobs to execute...
+
+[Tue Oct  8 15:07:44 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter851/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter851/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter851/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter851/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter851/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 899
+    wildcards: f=851, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:47 2024]
+Finished job 183.
+89 of 1458 steps (6%) done
+Select jobs to execute...
+
+[Tue Oct  8 15:07:47 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter416/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter416/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter416/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter416/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter416/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 464
+    wildcards: f=416, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:49 2024]
+Finished job 184.
+90 of 1458 steps (6%) done
+Select jobs to execute...
+
+[Tue Oct  8 15:07:49 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter1286/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1286/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1286/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1286/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1286/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 1334
+    wildcards: f=1286, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:52 2024]
+Finished job 452.
+91 of 1458 steps (6%) done
+Select jobs to execute...
+
+[Tue Oct  8 15:07:52 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter852/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter852/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter852/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter852/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter852/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 900
+    wildcards: f=852, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:53 2024]
+Finished job 887.
+92 of 1458 steps (6%) done
+Select jobs to execute...
+
+[Tue Oct  8 15:07:53 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter417/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter417/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter417/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter417/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter417/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 465
+    wildcards: f=417, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 15:07:54 2024]
+Finished job 890.
+93 of 1458 steps (6%) done
+Select jobs to execute...
+
+[Tue Oct  8 15:07:54 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter1287/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1287/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1287/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1287/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1287/pcs_ppca_miss/pcs_npcs2_eval.csv
+    jobid: 1335
+    wildcards: f=1287, method=ppca_miss, npcs=2
+    resources: tmpdir=/tmp
+
+Terminating processes on user request, this might take some time.
+[Tue Oct  8 15:07:55 2024]
+Error in rule ppcaMethods_sub:
+    jobid: 1335
+    output: to_delete/filter1287/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1287/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1287/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1287/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1287/pcs_ppca_miss/pcs_npcs2_eval.csv
+
+RuleException:
+CalledProcessError in line 90 of /mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/Snakefile:
+Command 'set -euo pipefail;  Rscript --vanilla /mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/.snakemake/scripts/tmp02h8mivc.pca_methods_ppca_direct.R' returned non-zero exit status 1.
+  File "/mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/Snakefile", line 90, in __rule_ppcaMethods_sub
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+[Tue Oct  8 15:07:55 2024]
+Error in rule ppcaMethods_sub:
+    jobid: 900
+    output: to_delete/filter852/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter852/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter852/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter852/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter852/pcs_ppca_miss/pcs_npcs2_eval.csv
+
+RuleException:
+CalledProcessError in line 90 of /mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/Snakefile:
+Command 'set -euo pipefail;  Rscript --vanilla /mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/.snakemake/scripts/tmp2a28s1iw.pca_methods_ppca_direct.R' returned non-zero exit status 1.
+  File "/mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/Snakefile", line 90, in __rule_ppcaMethods_sub
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+[Tue Oct  8 15:07:55 2024]
+Error in rule ppcaMethods_sub:
+    jobid: 465
+    output: to_delete/filter417/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter417/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter417/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter417/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter417/pcs_ppca_miss/pcs_npcs2_eval.csv
+
+RuleException:
+CalledProcessError in line 90 of /mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/Snakefile:
+Command 'set -euo pipefail;  Rscript --vanilla /mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/.snakemake/scripts/tmpayl3ffdg.pca_methods_ppca_direct.R' returned non-zero exit status 1.
+  File "/mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/Snakefile", line 90, in __rule_ppcaMethods_sub
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+[Tue Oct  8 15:07:55 2024]
+Error in rule ppcaMethods_sub:
+    jobid: 464
+    output: to_delete/filter416/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter416/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter416/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter416/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter416/pcs_ppca_miss/pcs_npcs2_eval.csv
+
+RuleException:
+CalledProcessError in line 90 of /mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/Snakefile:
+Command 'set -euo pipefail;  Rscript --vanilla /mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/.snakemake/scripts/tmpe5i2xc6c.pca_methods_ppca_direct.R' returned non-zero exit status 1.
+  File "/mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/Snakefile", line 90, in __rule_ppcaMethods_sub
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+[Tue Oct  8 15:07:55 2024]
+Error in rule ppcaMethods_sub:
+    jobid: 1334
+    output: to_delete/filter1286/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1286/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1286/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1286/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1286/pcs_ppca_miss/pcs_npcs2_eval.csv
+
+RuleException:
+CalledProcessError in line 90 of /mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/Snakefile:
+Command 'set -euo pipefail;  Rscript --vanilla /mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/.snakemake/scripts/tmprmi1otis.pca_methods_ppca_direct.R' returned non-zero exit status 1.
+  File "/mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/Snakefile", line 90, in __rule_ppcaMethods_sub
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+[Tue Oct  8 15:07:55 2024]
+Error in rule ppcaMethods_sub:
+    jobid: 1331
+    output: to_delete/filter1283/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter1283/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter1283/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter1283/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter1283/pcs_ppca_miss/pcs_npcs2_eval.csv
+
+RuleException:
+CalledProcessError in line 90 of /mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/Snakefile:
+Command 'set -euo pipefail;  Rscript --vanilla /mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/.snakemake/scripts/tmp97hlqye6.pca_methods_ppca_direct.R' returned non-zero exit status 1.
+  File "/mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/Snakefile", line 90, in __rule_ppcaMethods_sub
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+[Tue Oct  8 15:07:55 2024]
+Error in rule ppcaMethods_sub:
+    jobid: 463
+    output: to_delete/filter415/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter415/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter415/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter415/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter415/pcs_ppca_miss/pcs_npcs2_eval.csv
+
+RuleException:
+CalledProcessError in line 90 of /mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/Snakefile:
+Command 'set -euo pipefail;  Rscript --vanilla /mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/.snakemake/scripts/tmpyg5e2ion.pca_methods_ppca_direct.R' returned non-zero exit status 1.
+  File "/mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/Snakefile", line 90, in __rule_ppcaMethods_sub
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+Cancelling snakemake on user request.
+[Tue Oct  8 15:07:55 2024]
+Error in rule ppcaMethods_sub:
+    jobid: 899
+    output: to_delete/filter851/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter851/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter851/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter851/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter851/pcs_ppca_miss/pcs_npcs2_eval.csv
+
+RuleException:
+CalledProcessError in line 90 of /mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/Snakefile:
+Command 'set -euo pipefail;  Rscript --vanilla /mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/.snakemake/scripts/tmpqppr8uad.pca_methods_ppca_direct.R' returned non-zero exit status 1.
+  File "/mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/Snakefile", line 90, in __rule_ppcaMethods_sub
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+[Tue Oct  8 15:07:55 2024]
+Error in rule ppcaMethods_sub:
+    jobid: 891
+    output: to_delete/filter843/pcs_ppca_miss/pcs_npcs2.csv, to_delete/filter843/pcs_ppca_miss/pcs_npcs2.csv_scores, to_delete/filter843/pcs_ppca_miss/pcs_npcs2_data_rec.csv, to_delete/filter843/pcs_ppca_miss/pcs_npcs2_sigma.txt, to_delete/filter843/pcs_ppca_miss/pcs_npcs2_eval.csv
+
+RuleException:
+CalledProcessError in line 90 of /mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/Snakefile:
+Command 'set -euo pipefail;  Rscript --vanilla /mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/.snakemake/scripts/tmpd_gk86ll.pca_methods_ppca_direct.R' returned non-zero exit status 1.
+  File "/mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/Snakefile", line 90, in __rule_ppcaMethods_sub
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run

@@ -1,0 +1,23 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 120
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count    min threads    max threads
+--------------  -------  -------------  -------------
+runAdmixtools2        1              1              1
+total                 1              1              1
+
+Select jobs to execute...
+
+[Wed Oct  9 11:38:50 2024]
+rule runAdmixtools2:
+    input: toy_example/all_ind.geno, toy_example/all_ind.ind
+    output: to_delete/admixtools2/f2mat_mean.csv, to_delete/admixtools2/f2mat_std.csv
+    jobid: 0
+    resources: tmpdir=/tmp
+
+[Wed Oct  9 11:38:52 2024]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: /mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/.snakemake/log/2024-10-09T113849.007039.snakemake.log

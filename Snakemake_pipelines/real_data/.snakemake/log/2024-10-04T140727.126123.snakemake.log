@@ -1,0 +1,24 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 30
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count    min threads    max threads
+-------------  -------  -------------  -------------
+splitEigen_ch        1              1              1
+total                1              1              1
+
+Select jobs to execute...
+
+[Fri Oct  4 14:07:28 2024]
+rule splitEigen_ch:
+    input: to_delete/chrm1/all_ind.snp
+    output: to_delete/chrm1/n_blocks.csv
+    jobid: 0
+    wildcards: ch=1
+    resources: tmpdir=/tmp
+
+[Fri Oct  4 14:07:30 2024]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: /mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/.snakemake/log/2024-10-04T140727.126123.snakemake.log

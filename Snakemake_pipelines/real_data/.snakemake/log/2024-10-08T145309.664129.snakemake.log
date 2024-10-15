@@ -1,0 +1,33 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 40
+Rules claiming more threads will be scaled down.
+Job stats:
+job                count    min threads    max threads
+---------------  -------  -------------  -------------
+ppcaMethods_sub        1              1              1
+total                  1              1              1
+
+Select jobs to execute...
+
+[Tue Oct  8 14:53:11 2024]
+rule ppcaMethods_sub:
+    input: toy_example/all_ind.geno_pc, to_delete/n_blocks.csv
+    output: to_delete/filter0/pcs_ppca_direct/pcs_npcs10.csv, to_delete/filter0/pcs_ppca_direct/pcs_npcs10.csv_scores, to_delete/filter0/pcs_ppca_direct/pcs_npcs10_data_rec.csv, to_delete/filter0/pcs_ppca_direct/pcs_npcs10_sigma.txt, to_delete/filter0/pcs_ppca_direct/pcs_npcs10_eval.csv
+    jobid: 0
+    wildcards: f=0, method=ppca_direct, npcs=10
+    resources: tmpdir=/tmp
+
+[Tue Oct  8 14:53:14 2024]
+Error in rule ppcaMethods_sub:
+    jobid: 0
+    output: to_delete/filter0/pcs_ppca_direct/pcs_npcs10.csv, to_delete/filter0/pcs_ppca_direct/pcs_npcs10.csv_scores, to_delete/filter0/pcs_ppca_direct/pcs_npcs10_data_rec.csv, to_delete/filter0/pcs_ppca_direct/pcs_npcs10_sigma.txt, to_delete/filter0/pcs_ppca_direct/pcs_npcs10_eval.csv
+
+RuleException:
+CalledProcessError in line 90 of /mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/Snakefile:
+Command 'set -euo pipefail;  Rscript --vanilla /mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/.snakemake/scripts/tmp1uwdeedr.pca_methods_ppca_direct.R' returned non-zero exit status 1.
+  File "/mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/Snakefile", line 90, in __rule_ppcaMethods_sub
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/.snakemake/log/2024-10-08T145309.664129.snakemake.log

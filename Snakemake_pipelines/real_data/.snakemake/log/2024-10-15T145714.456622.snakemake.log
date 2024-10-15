@@ -1,0 +1,4 @@
+Building DAG of jobs...
+WildcardError in line 91 of /mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/Snakefile:
+Wildcards in input files cannot be determined from output files:
+'npcs'

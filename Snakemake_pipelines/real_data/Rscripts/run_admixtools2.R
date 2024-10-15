@@ -1,7 +1,7 @@
 library(admixtools)
 library(tidyverse)
 
-get_fstats <- function(prefix, outfile, outf2, f2_dir, pop1, pop2, pop3, pop4){
+get_fstats <- function(prefix, indf, outf2, outstd, f2_dir){
 
   prefix = strsplit(prefix, split=".geno")[[1]]
 
@@ -11,41 +11,41 @@ get_fstats <- function(prefix, outfile, outf2, f2_dir, pop1, pop2, pop3, pop4){
 
   f2s = admixtools::read_f2(f2_dir)
 
+  allpop <- read.delim(indf, sep="\t", header = FALSE)
+  pop=allpop$V3
 
-  print(mean(f2s[pop1,pop3,]))
-  print(sd(f2s[pop1,pop3,]))
-  print(admixtools::f3(f2s, pop1, pop3, pop2)$est)
-  #print(f2s[pop1,pop4,])
-
-  #pop1="1"
-  #pop2="22"
-  #pop3="33"
-  #pop4="44"
-  f2_mean=mean(f2s[pop1,pop2,])
-  f3_mean=admixtools::f3(f2s, pop2, pop1, pop3)$est
-  f4_mean=admixtools::f4(f2s, pop1, pop2, pop3, pop4)$est
-  f4_std=admixtools::f4(f2s, pop1, pop2, pop3, pop4)$se
-  f2mat1=apply(f2s, 1:2, mean)
-
-  f2mat=matrix(c(f2mat1[pop1,pop1],f2mat1[pop2,pop1],f2mat1[pop3,pop1],f2mat1[pop4,pop1],
-  f2mat1[pop1,pop2],f2mat1[pop2,pop2],f2mat1[pop3,pop2],f2mat1[pop4,pop2],
-  f2mat1[pop1,pop3],f2mat1[pop2,pop3],f2mat1[pop3,pop3],f2mat1[pop4,pop3],
-  f2mat1[pop1,pop4],f2mat1[pop2,pop4],f2mat1[pop3,pop4],f2mat1[pop4,pop4]), nrow = 4, ncol = 4, byrow = FALSE)
-
-  #f2_mean=f2mat[pop1,pop2]
-  #f3_mean=(f2mat[pop2, pop3] + f2mat[pop1, pop3] - f2mat[pop1, pop2])/2
-  #f4_mean=(f2mat[pop1, pop3] + f2mat[pop2, pop4] - f2mat[pop1, pop2] - f2mat[pop3, pop4])/2
+  n <- length(pop)
+  f2mat_mean <- matrix(NA, nrow = n, ncol = n)
+  f2mat_std <- matrix(NA, nrow = n, ncol = n)
 
 
-  write.table(c(f2_mean, f3_mean, f4_mean, f4_std), file = outfile, row.names=FALSE, col.names=FALSE, sep=',')
-  write.table(round(f2mat,4), file = outf2, row.names=FALSE, col.names=FALSE, sep=',')
+  for (i in 1:n) {
+    for (j in 1:n) {
+      if (i==j){
+        f2mat_mean[i, j] <- 0
+        f2mat_std[i, j] <- 0
+      }
+      else{
+        f2mat_mean[i, j] <- mean(f2s[pop[i], pop[j],])
+        f2mat_std[i, j] <- sd(f2s[pop[i], pop[j],])
+      }
+
+    }
+  }
+
+  rownames(f2mat_mean) <- pop
+  rownames(f2mat_std) <- pop
+  colnames(f2mat_mean) <- pop
+  colnames(f2mat_std) <- pop
+
+  write.table(f2mat_mean, file = outf2, row.names=TRUE, col.names=TRUE, sep=',')
+  write.table(f2mat_std, file = outstd, row.names=TRUE, col.names=TRUE, sep=',')
 
 }
 
-#prefix = '/mnt/diversity/divyaratan_popli/fstats/genetic_simulations/migrations_comparison/simfiles/mu0/run1/npop4_nind400/missing0/subsetInds40/p1pop1_p2pop2_p3pop3_p4pop4/eigen_sub.geno'
-#f2_dir = '/mnt/diversity/divyaratan_popli/fstats/genetic_simulations/migrations_comparison/simfiles/mu0/run1/npop4_nind400/missing0/subsetInds40/p1pop1_p2pop2_p3pop3_p4pop4/admixtools2_fmat'
+#prefix = '/mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/toy_example/all_ind.geno'
+#f2_dir = '/mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/to_delete/admixtools2_fmat'
+#indf= '/mnt/diversity/divyaratan_popli/pca_paper/Snakemake_pipelines/real_data/toy_example/all_ind.ind'
 
-get_fstats(prefix=snakemake@input[["prefix"]], outfile=snakemake@output[["outfile"]],
-           f2_dir=snakemake@params[["f2_dir"]],outf2=snakemake@output[["outf2"]],
-           pop1=snakemake@params[["pop1"]], pop2=snakemake@params[["pop2"]],
-           pop3=snakemake@params[["pop3"]], pop4=snakemake@params[["pop4"]])
+get_fstats(prefix=snakemake@input[["prefix"]], indf=snakemake@input[["indf"]], outstd=snakemake@output[["outstd"]],
+           f2_dir=snakemake@params[["f2_dir"]],outf2=snakemake@output[["outf2"]] )

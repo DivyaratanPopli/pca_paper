@@ -1,5 +1,5 @@
 import numpy as np
-
+import pandas as pd
 
 def f2(data, S1, S2):
     return np.square(data[:,S1] - data[:,S2])
@@ -69,8 +69,7 @@ def f4_test(fpos, fppca, popf, S1, S2, S3, S4, scale, fout):
     #ll=ncol*np.log10((X[0,0]*X[1,1]+X[0,1]**2)/(X[0,0]*X[1,1]))
     ll=ncol*np.log10((X[0,0]*X[1,1])/((X[0,0]*X[1,1]) - X[0,1]**2))
 
-    with open(fout, 'w') as f:
-        print(ll,file=f)
+
 
 def all_ftest(ftest, fadmix, mu, runs, fout):
     flist=[]
@@ -110,20 +109,7 @@ def ftrue(f2list, flist, outf2, outf):
     np.savetxt(fname=outf2, X=f20, delimiter=",")
     np.savetxt(fname=outf, X=f0, delimiter=",")
 
-def admix_scale(dataf, genof, outfile, f2inf, f2normf):
-    data=np.loadtxt(dataf,dtype='float', delimiter=",")[:3] #fourth value is st. dev.
-    geno=np.loadtxt(genof,dtype='float', delimiter=",")
-    norm_scale=len(geno)
-    print(norm_scale, data)
 
-    [f2_res, f3_res, f4_res]=norm_scale * data
-    f_res = np.array([f2_res, f3_res, f4_res])
-
-    f2in=np.loadtxt(f2inf,dtype='float', delimiter=",")
-    f2norm = f2in * norm_scale
-
-    np.savetxt(fname=outfile, X=f_res, delimiter=",")
-    np.savetxt(fname=f2normf, X=f2norm, delimiter=",")
 
 def data2pop(data,sn):
 
@@ -248,28 +234,27 @@ def f2altvin(f2,f2out):
 
 
 
-
-
-def sd_ppca_all(ppcaf, outfile_mu, outfile_std, scale, filter1f):
+def sd_ppca_all(ppcaf, outfile_mu, outfile_std, scale, filter1f, npcs):
+    npcs=int(npcs)
     filter1=np.loadtxt(filter1f,dtype='int', delimiter=",")
 
-    ppca_0=np.loadtxt(ppcaf[0],dtype='float', delimiter=",")[:2,:]
+    ppca_0=np.loadtxt(ppcaf[0],dtype='float', delimiter=",")[:npcs,:]
     sig=np.sign(ppca_0)
 
     for i in range(1,len(ppcaf)):
-        xx=np.loadtxt(ppcaf[i],dtype='float', delimiter=",")[:2,:]
+        xx=np.loadtxt(ppcaf[i],dtype='float', delimiter=",")[:npcs,:]
 
-        for b in range(2):
+        for b in range(npcs):
             if np.sum(np.sign(xx[b,:])!=sig[b]) / len(sig[b]) >0.5 :
                 xx[b,:] = (-1) * xx[b,:]
 
         ppca_0=np.dstack((ppca_0, xx))
-    print(np.mean(ppca_0,2))
+
     mu=np.mean(ppca_0,2)
 
     var=np.zeros(np.shape(mu))
-    for j in range(2):
-        for k in range(9):
+    for j in range(np.shape(mu)[0]):
+        for k in range(np.shape(mu)[1]):
             inst1=ppca_0[j,k,:]
             var[j,k] = np.sum( (np.sum(filter1) - filter1) / filter1 * (inst1-mu[j,k])**2) / len(filter1)
 
@@ -278,8 +263,6 @@ def sd_ppca_all(ppcaf, outfile_mu, outfile_std, scale, filter1f):
 
     np.savetxt(fname=outfile_mu, X=mu, delimiter=",", fmt="%f")
     np.savetxt(fname=outfile_std, X=std, delimiter=",", fmt="%f")
-
-
 
 
 
@@ -303,3 +286,48 @@ def make_tables(allf, meanf, stdf):
 
     np.savetxt(fname=meanf, X=xmean, delimiter=",")
     np.savetxt(fname=stdf, X=xstd, delimiter=",")
+
+
+def f2stats(dataf, popf, filter1f, scale, fout_std, fout_mean):
+
+    scale=int(scale)
+    pop=np.loadtxt(popf,dtype='str', delimiter="\t")[:,0]
+    filter1=np.loadtxt(filter1f,dtype='int', delimiter=",")
+
+    df_array=[]
+
+    for f in range(len(dataf)):
+
+        data=np.loadtxt(dataf[f],dtype='float', delimiter=",")[:scale,:]
+
+        df = pd.DataFrame(index=pop, columns=pop)
+        #df_std = pd.DataFrame(index=pop[:,0], columns=pop[:,0])
+
+        for i in range(len(pop)):
+            for j in range(len(pop)):
+
+                if i==j:
+                    df.loc[pop[i],pop[j]] = 0
+                else:
+                    df.loc[pop[i],pop[j]] = np.sum(f2(data,i,j))
+
+        df_array.append(df)
+
+    stacked_data = np.stack([df_.values for df_ in df_array], axis=0)
+    mean_data = np.mean(stacked_data, axis=0)
+    mean_df = pd.DataFrame(mean_data, index=df.index, columns=df.columns)
+
+    var=np.zeros(np.shape(mean_data))
+    for j in range(np.shape(mean_data)[0]):
+        for k in range(np.shape(mean_data)[1]):
+            inst1=stacked_data[:,j,k]
+            var[j,k] = np.sum( (np.sum(filter1) - filter1) / filter1 * (inst1-mean_data[j,k])**2) / len(filter1)
+
+    std = var**0.5
+    std_df = pd.DataFrame(std, index=df.index, columns=df.columns)
+
+    with pd.option_context('display.max_rows', len(mean_df.index), 'display.max_columns', len(mean_df.columns)):
+        mean_df.to_csv(fout_mean, sep=',')
+
+    with pd.option_context('display.max_rows', len(std_df.index), 'display.max_columns', len(std_df.columns)):
+        std_df.to_csv(fout_std, sep=',')
