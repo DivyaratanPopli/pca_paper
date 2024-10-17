@@ -17,10 +17,10 @@ Output:
 data_files/f2mat_mean_ppca_scale{npcs}.csv , data_files/f2mat_std_ppca_scale{npcs}.csv contain matrix with mean and standard deviations respectively for estimated F2s from PPCA for all individuals.
 data_file/admixtools2/f2mat_mean.csv , data_files/admixtools2/f2mat_std.csv contain matrix with mean and standard deviations respectively for estimated F2s using ADMIXTOOLS 2 for all populations.
 
-$F_3s$ and $F_4s$ can then be calculated as linear combinations of $F_2s$.
+$F_3s$ and $F_4s$ can then be calculated as linear combinations of $F_2 values$.
 
 To calculate mean $F_3$ and $F_4$ values using mean $F_2$s, use the following equations (from Patterson, 2012):
 $$F_3(X_1;X_2,X_3) = \frac{1}{2}[ F_2(X_1,X_2) + F2(X_1,X_3) - F2(X_2,X_3) ] $$
 $$F4(X1,X2;X3,X4) = \frac{1}{2}[ F2(X1,X3) + F2(X2,X4) - F2(X1,X4) - F2(X2,X3) ] $$
 
-One can also calculate standard deviations for $F_3$ and $F_4$ using standard deviations of $F_2$s using the standard statistics.
+One can also calculate standard deviations for $F_3$ and $F_4$ using standard deviations of $F_2$ using the standard statistics.
