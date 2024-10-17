@@ -8,9 +8,10 @@ We have provided a pipeline to implement this method in the repository Snakemake
 
 To run the pipeline on the data files in toy example, follow these steps:
 
-`git clone https://github.com/DivyaratanPopli/pca_paper #clone the repository to your current directory
+```bash
+git clone https://github.com/DivyaratanPopli/pca_paper #clone the repository to your current directory
 cd Snakemake_pipelines/real_data
-snakemake all --cores 50 --config npcs=2 #For example, use 50 cores, and the number of principle componenets for probabilistic PCA is 2`
+snakemake all --cores 50 --config npcs=2 #For example, use 50 cores, and the number of principle componenets for probabilistic PCA is 2
 
 Output:
 data_files/f2mat_mean_ppca_scale{npcs}.csv , data_files/f2mat_std_ppca_scale{npcs}.csv contain matrix with mean and standard deviations respectively for estimated F2s from PPCA for all individuals.
