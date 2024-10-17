@@ -4,7 +4,7 @@ Thus, we combine PCA and F-statistics into a joint analysis. This framework allo
 
 Here, we provide different implementations of PCA - probabilistic PCA (PPCA), Latent Subspace Estimation (LSE) and classical PCA - and find that F-statistics are more naturally interpreted in a PPCA or LSE-based framework. Using this framework, F-statistics can be accurately estimated from PPCA in the presence of large amounts of missing data.
 
-We have provided a pipeline to implement this method in the repository `Snakemake_pipelines/real_data`. We also have example input files with Neandertal data in the repository Snakemake_pipelines/real_data/toy_example. The pipelines that we used to simulate genetic data and to test our method are available in the repository Snakemake_pipelines/simulations.
+We have provided a pipeline to implement this method (described in detail at https://www.biorxiv.org/content/10.1101/2024.09.25.615036v1) in the repository `Snakemake_pipelines/real_data`. We also have example input files with Neandertal data in the repository Snakemake_pipelines/real_data/toy_example. The pipelines that we used to simulate genetic data and to test our method are available in the repository Snakemake_pipelines/simulations.
 
 To run the pipeline on the data files in toy example, follow these steps:
 
