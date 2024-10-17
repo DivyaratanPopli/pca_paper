@@ -11,7 +11,7 @@ rule eigenWrapper: # make it easier to input geno file with np
     input:
         genof="toy_example/all_ind.geno"
     output:
-        outf="toy_example/all_ind.geno_pc",
+        outf="data_files/all_ind.geno_pc",
     script: "Rscripts/convert_geno.R"
 
 
@@ -54,7 +54,7 @@ rule runAdmixtools2:
 
 rule ppcaMethods_sub:
     input:
-        dataf= "toy_example/all_ind.geno_pc",
+        dataf= "data_files/all_ind.geno_pc",
         filter="data_files/n_blocks.csv"
     output:
         outfile= "data_files/filter{f}/pcs_{method}/pcs_npcs{npcs}.csv",

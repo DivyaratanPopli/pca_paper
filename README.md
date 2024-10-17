@@ -14,8 +14,8 @@ cd Snakemake_pipelines/real_data
 snakemake all --cores 50 --config npcs=2 #For example, use 50 cores, and the number of principle componenets for probabilistic PCA is 2
 ```
 Output:
-data_files/f2mat_mean_ppca_scale{npcs}.csv , data_files/f2mat_std_ppca_scale{npcs}.csv contain matrix with mean and standard deviations respectively for estimated F2s from PPCA for all individuals.
-data_file/admixtools2/f2mat_mean.csv , data_files/admixtools2/f2mat_std.csv contain matrix with mean and standard deviations respectively for estimated F2s using ADMIXTOOLS 2 for all populations.
+`data_files/f2mat_mean_ppca_scale{npcs}.csv` , `data_files/f2mat_std_ppca_scale{npcs}.csv` contain matrix with mean and standard deviations respectively for estimated F2s from PPCA for all individuals.
+`data_file/admixtools2/f2mat_mean.csv` , `data_files/admixtools2/f2mat_std.csv` contain matrix with mean and standard deviations respectively for estimated F2s using ADMIXTOOLS 2 for all populations.
 
 $F_3$ and $F_4$ can then be calculated as linear combinations of $F_2$ values.
 
@@ -23,4 +23,4 @@ To calculate mean $F_3$ and $F_4$ values using mean $F_2$ values, use the follow
 $$F_3(X_1;X_2,X_3) = \frac{1}{2}[ F_2(X_1,X_2) + F2(X_1,X_3) - F2(X_2,X_3) ] $$
 $$F4(X_1,X_2;X_3,X_4) = \frac{1}{2}[ F_2(X_1,X_3) + F_2(X_2,X_4) - F_2(X_1,X_4) - F_2(X_2,X_3) ] $$
 
-One can also calculate standard deviations for $F_3$ and $F_4$ using standard deviations of $F_2$ using the standard statistics.
+One can also calculate standard deviations for $F_3$ and $F_4$ using standard deviations of $F_2$ using the standard statistics. To use the pipeline for your own data, just replace the toy example files with your own eigenstrat files.
