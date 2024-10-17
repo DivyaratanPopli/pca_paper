@@ -21,6 +21,6 @@ $F_3$ and $F_4$ can then be calculated as linear combinations of $F_2$ values.
 
 To calculate mean $F_3$ and $F_4$ values using mean $F_2$ values, use the following equations (from Patterson, 2012):
 $$F_3(X_1;X_2,X_3) = \frac{1}{2}[ F_2(X_1,X_2) + F2(X_1,X_3) - F2(X_2,X_3) ] $$
-$$F4(X1,X2;X3,X4) = \frac{1}{2}[ F2(X1,X3) + F2(X2,X4) - F2(X1,X4) - F2(X2,X3) ] $$
+$$F4(X_1,X_2;X_3,X_4) = \frac{1}{2}[ F_2(X_1,X_3) + F_2(X_2,X_4) - F_2(X_1,X_4) - F_2(X_2,X_3) ] $$
 
 One can also calculate standard deviations for $F_3$ and $F_4$ using standard deviations of $F_2$ using the standard statistics.
