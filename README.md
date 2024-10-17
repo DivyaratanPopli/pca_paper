@@ -20,7 +20,7 @@ data_file/admixtools2/f2mat_mean.csv , data_files/admixtools2/f2mat_std.csv cont
 F3s and F4s can then be calculated as linear combinations of F2s.
 
 To calculate mean F3 and F4 values using mean F2s, use the following equations (from Patterson, 2012):
-F3(X1;X2,X3) = [ F2(X1,X2) + F2(X1,X3) - F2(X2,X3) ]/2
-F4(X1,X2;X3,X4) = [ F2(X1,X3) + F2(X2,X4) - F2(X1,X4) - F2(X2,X3) ]/2
+$$F3(X1;X2,X3) = [ F2(X1,X2) + F2(X1,X3) - F2(X2,X3) ]/2$$
+$$F4(X1,X2;X3,X4) = [ F2(X1,X3) + F2(X2,X4) - F2(X1,X4) - F2(X2,X3) ]/2$$
 
 One can also calculate standard deviations for F3 and F4 using standard deviations of F2s using the standard statistics.
